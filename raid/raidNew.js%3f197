@@ -1,0 +1,298 @@
+var Raidboss = {
+    args : raidArgs,
+    res : false,
+    dom : {
+        "btnRecovery"        : $("#raidNew-btnBpRecover"),
+        "btnAttack20"        : $("#raidNew-btnAttack20"),
+        "btnAttack50"        : $("#raidNew-btnAttack50"),
+        "btnAttackFree"      : $("#raidNew-btnAttackFree"),
+        "bossHpGauge"        : $("#bossHpGauge"),
+        "entryNum1"          : $("#raidNew-entryNum1"),
+        "entryNum2"          : $("#raidNew-entryNum2"),
+        "bp"                 : $("#raidNew-bp"),
+        "bpBar"              : $("#raidNew-bpBar"),
+        "entry"              : $("#raidNew-entry"),
+        "levelUpF"           : $(".raidNew-abilityF"),
+        "levelUpClose"       : $("#abilityCloseBtn"),
+        "abilityBtn"         : $("#abilityBtn"),
+        "expiredTime"        : $("#expiredTime"),
+        "raidDefaultImgWrap" : $('#raidDefaultImgWrap'),
+        "raidAnimWrap"       : $("#raidAnimWrap"),
+        "alertF"             : $("#raidNew-alertF"),
+        "loader"             : $("#raidNew-loader"),
+        "helpBtn"            : $("#onHelpRequest"),
+        "bpItemListDialog"   : $("#bpItemListDialog"),
+        "bpItemUseBackBtn"   : $("#bpItemUseBackBtn")
+    },
+    init : function(){
+        this.timerId = null;
+        this.initBtn();
+        this.bindBtn();
+        // this.setSync();
+        this.showEntry();
+        // this.setTimer();
+
+
+    },
+    setTimer : function(){
+        var _remainTime = this.args.remainTime;
+        var _this = this;
+        this.timerId = setInterval(function(){
+            _this.updateRemainTime();
+        }, 1000);
+    },
+    updateRemainTime : function(){
+        this.args.remainTime = this.args.remainTime - 1;
+
+        if( this.args.remainTime < 0 ){
+            // remainTimeが0未満になったら
+            clearInterval(this.timerId);
+            location.href = this.args.timeUpUrl;
+            //location.href = this.args.battleEndUrl;
+
+            // raidに攻撃する系ボタンを押せなくする
+            this.dom.btnAttackFree.addClass("unchangeDisabled");
+            this.dom.btnAttack20.addClass("unchangeDisabled");
+            this.dom.btnAttack50.addClass("unchangeDisabled");
+        }else{
+            // remainTimeがまだある
+            var _hour = ("0"+Math.floor(this.args.remainTime / 3600));
+            var _min = ("0"+Math.floor((this.args.remainTime%3600)/60)).slice(-2);
+            var _sec = ("0"+((this.args.remainTime%3600)%60)).slice(-2);
+            var remainText = _hour+":"+_min+":"+_sec+" until escape";
+            this.dom.expiredTime.text(remainText);
+        }
+    },
+    setSync : function(){
+        var _this = this;
+        setInterval(function(){
+            if (Raidboss.execFlg == true) {
+                return;
+            } else {
+                $.ajax({
+                    url : _this.args.syncUrl,
+                    type : "GET",
+                    dataType: "json"
+                }).success(function(res){
+                    if(res.status != 200) {
+                        location.reload();
+                    } else {
+                        if (res.current_boss) {
+                            _this.setBossHp(res.current_boss.hp, res.current_boss.max_hp);
+                        } else {
+                            _this.setBossHp(0, 0);
+                        }
+                        _this.updateBossHp();
+                        _this.updateEntry(res.entry+1);
+                    }
+                });
+            }
+
+        }, 5000);
+    },
+    bindBtn : function(){
+        var _this = this;
+        this.dom.btnAttackFree.on("click", function(){
+            _this.args.isNew = 0;
+            _this.battleExec(1);
+        });
+        this.dom.btnAttack20.on("click", function(){
+            if (!_this.dom.btnAttack20.hasClass("off")) {
+                _this.battleExec(2);
+            }
+
+        });
+        this.dom.btnAttack50.on("click", function(){
+            // if (!_this.dom.btnAttack50.hasClass("off")) {
+                _this.battleExec(3);
+            // }
+
+        });
+        this.dom.btnRecovery.on("click", function(){
+            location.href = _this.args.recoverUrl;
+            // // 戦闘処理中ならBPアイテムリストダイアログを表示させない
+            // if (_this.execFlg === true) {
+            //     return ;
+            // }
+            //
+            // // itemUse.jsの処理でBPアイテムリストダイアログ（include/popup/list_bpItemUse.tpl）を開く
+            // // 処理後、bpRecoveryResultが呼び出されます。
+            // itemUse.controller.ItemListDialogShow('bp', Raidboss.bpRecoveryResult);
+        });
+        this.dom.levelUpClose.on("click", function(){
+            _this.dom.levelUpF.hide();
+        });
+        this.dom.abilityBtn.on("click", function(){
+            location.href = _this.args.abilityUrl;
+        });
+    },
+    updateEntry : function(_entry){
+        if (this.args.entry != _entry) {
+            this.args.entry = _entry;
+            this.showEntry();
+        }
+
+    },
+    showEntry : function(){
+        var _entry = ("0"+this.args.entry).slice(-2);
+        var _baseUrl = "";
+        if (this.args.baseUrl) {
+            _baseUrl = this.args.baseUrl + "/static/image/sp/ui/raid/battle_ui/num";
+        } else {
+            _baseUrl = "/static/image/sp/ui/raid/battle_ui/num";
+        }
+        this.dom.entryNum1.css({
+            "background-image" : "url("+_baseUrl+_entry[0]+".png)"
+        });
+        this.dom.entryNum2.css({
+            "background-image" : "url("+_baseUrl+_entry[1]+".png)"
+        });
+
+
+    },
+    setBossHp :function(hp, hpMax){
+        this.args.hp = hp;
+        this.args.hpMax = hpMax;
+
+
+
+    },
+    updateBossHp : function(){
+        var hp = this.args.hp
+        var hpMax = this.args.hpMax;
+        var _per = Math.floor(hp/hpMax*100);
+
+        this.dom.bossHpGauge.css({"width" : _per+"%"});
+    },
+    initBtn : function(){
+        if (this.args.isNew == 0) {
+            this.dom.btnRecovery.show();
+            this.dom.btnAttack20.show();
+            this.dom.btnAttack50.show();
+            this.dom.btnAttackFree.hide();
+            this.dom.helpBtn.show();
+        }
+
+
+        if (this.args.bp  < 50 ) {
+            this.dom.btnAttack50.addClass("off");
+        }
+        if (this.args.bp < 20) {
+            this.dom.btnAttack20.addClass("off");
+        }
+    },
+    battleExec : function(_attackType){
+        var _this = this;
+        var ajaxConf;
+        var _attackUrl = this.args.attackUrl;
+        var _attackCount = this.args.attackCount
+        var _execUrl = _attackUrl + "/"+_attackType+"/"+_attackCount;
+
+        // if (this.execFlg == true) {
+        //     //console.log("処理中です");
+        //     return ;
+        // }
+
+        // this.dom.loader.show();
+        // this.execFlg = true;
+
+        ajaxConf = {
+            url  : _execUrl,
+            type : 'GET',
+        }
+
+        commonAjax.ajaxAction(ajaxConf).done(function(res){
+            location.reload();
+            // _this.res = res;
+            // if(res.status != 200) {
+            //     location.reload();
+            // } else {
+            //     if (res.current_boss) {
+            //         _this.setBossHp(res.current_boss.hp, res.current_boss.max_hp);
+            //     } else {
+            //         _this.setBossHp(0, 0);
+            //     }
+            //     _this.updateBp(res.user_param.bp,res.user_param.max_bp);
+
+            //     // _this.showAnim();
+            // }
+        }).fail(function(){
+            // _this.execFlg = false;
+        });
+
+    },
+    updateBp : function(bp,bpMax){
+        var _per = Math.floor(bp/bpMax*100);
+        this.dom.bp.text(bp);
+        this.dom.bpBar.css({width : _per+"%"});
+        if (bp  < 50 ) {
+            this.dom.btnAttack50.addClass("off");
+        }
+        if (bp < 20) {
+            this.dom.btnAttack20.addClass("off");
+        }
+    },
+
+    //バトル演出再生
+    showAnim : function(){
+        var _this = this;
+        var ajaxConf;
+
+        _this.dom.raidAnimWrap.removeClass('hideDis');
+        _this.dom.raidDefaultImgWrap.addClass('hideDis');
+
+        ajaxConf = {
+            url  : _this.args.animeUrl,
+            type : 'GET',
+        }
+
+        commonAjax.ajaxAction(ajaxConf).done(function(_res){
+            if(_res.flash_params !== undefined){
+                battleData = _res.flash_params;
+                bossBattle.play(battleData);
+            } else {
+                location.reload();
+            }
+        }).fail(function(){
+            location.reload();
+        });
+    },
+
+    levelUp : function(){
+        this.dom.levelUpF.show();
+    },
+
+    // BP回復後のレイド戦闘画面独自のview更新
+    // MEMO:この関数のみ、itemUse.jsを経由して呼び出されます。
+    bpRecoveryResult : function(_data){
+        var _per = 0;
+        // アイテムが使用されていれば処理を開始する
+        if (_data.is_user_item !== 0) {
+            // BPゲージ表示更新
+            _per = Math.floor(_data.user_status.bp / _data.user_status.max_bp * 100);
+            Raidboss.dom.bpBar.css({width : _per + "%"});
+
+            // BPテキスト表示更新 
+            Raidboss.dom.bp.text(_data.user_status.bp);
+
+            // 3倍攻撃ボタンのONOFF処理
+            if (_data.user_status.bp < 50 ) {
+                Raidboss.dom.btnAttack50.addClass("off");
+            }
+            else { 
+                Raidboss.dom.btnAttack50.removeClass("off");
+            }
+            // 通常攻撃ボタンのONOFF処理
+            if (_data.user_status.bp < 20) {
+                Raidboss.dom.btnAttack20.addClass("off");
+            }
+            else {
+                Raidboss.dom.btnAttack20.removeClass("off");
+            }
+        }
+    },
+};
+
+$(function(){
+    Raidboss.init();
+});

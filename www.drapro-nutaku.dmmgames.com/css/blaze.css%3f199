@@ -1,0 +1,1044 @@
+@charset "UTF-8";
+
+/************************************************************
+ブレイズクラウド
+************************************************************/
+
+/*
+・ブレクラ専用リストスタイル
+・救援＆召喚＆バトル準備ポップアップ
+・TOP
+・バトル結果画面
+・結晶ガチャ画面
+*/
+
+/*****************ブレクラ専用リストスタイル*****************/
+.blazeUserListWrap,.blazeBattleListWrap,.blazeBattleDetail {
+    margin: 2px 0 5px -11px;
+    width: 310px;
+}
+
+.blazeUserListWrap {
+    height: 350px;
+    margin-top: 6px;
+}
+
+.blazeUserList,.blazeBattleList,.blazeBattleDetail {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size : cover;
+    width: 310px;
+    height: 70px;
+}
+
+.blazeUserList {
+}
+
+.blazeBattleDetail {
+    margin: -18px 0 0 -11px;
+}
+
+.blazeBattleDetail.own {
+}
+
+.blazeUserList.easy,.blazeBattleList.easy,.blazeBattleDetail.easy {
+    background-position: 0 0;
+}
+
+.blazeUserList.normal,.blazeBattleList.normal,.blazeBattleDetail.normal {
+    background-position: 0 -70px;
+}
+
+.blazeUserList.hard,.blazeBattleList.hard,.blazeBattleDetail.hard {
+    background-position: 0 -140px;
+}
+
+.blazeUserList.death,.blazeBattleList.death,.blazeBattleDetail.death {
+    background-position: 0 -210px;
+}
+
+.blazeUserList:after,.blazeBattleList:after {
+    content : " ";
+    position: absolute;
+    top: -4px;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : 310px 5px;
+    width: 310px;
+    height: 5px;
+}
+
+.blazeUserList:nth-child(1):after,.blazeBattleList:nth-child(1):after {
+  background:none;
+}
+
+.blazeGuildIcon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : 45px 25px;
+    width: 45px;
+    height: 25px;
+}
+
+.blazeBtn {
+    position: relative;
+    float: right;
+    background-repeat: no-repeat;
+    background-size : 105px 204px;
+    width: 105px;
+    height: 51px;
+    cursor: pointer;
+    margin: 9px 6px 0 0;
+}
+
+.blazeBtn.blazeSummonBtn {
+    background-position: 0 0;
+}
+
+.blazeBtn.blazeSummonBtn.off {
+    background-position: 0 -51px;
+    pointer-events: none;
+}
+
+.blazeBtn.rescue {
+    background-position: 0 -102px;
+}
+
+.blazeBtn.rescue.own {
+    background-position: 0 -153px;
+}
+
+.blazeBtn span {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    background-repeat: no-repeat;
+    background-size : 18px 110px;
+    width: 9px;
+    height: 11px;
+}
+
+.blazeBtn span:nth-child(1) {
+    right: 35px;
+}
+
+.blazeBtn span:nth-child(2) {
+    right: 28px;
+}
+
+.blazeBtn span.num0 {
+    background-position: 0 0;
+}
+
+.blazeBtn.off span.num0 {
+    background-position: -9px 0;
+}
+
+.blazeBtn span.num1 {
+    background-position: 0 -11px;
+}
+
+.blazeBtn.off span.num1 {
+    background-position: -9px -11px;
+}
+
+.blazeBtn span.num2 {
+    background-position: 0 -22px;
+}
+
+.blazeBtn.off span.num2 {
+    background-position: -9px -22px;
+}
+
+.blazeBtn span.num3 {
+    background-position: 0 -33px;
+}
+
+.blazeBtn.off span.num3 {
+    background-position: -9px -33px;
+}
+
+.blazeBtn span.num4 {
+    background-position: 0 -44px;
+}
+
+.blazeBtn.off span.num4 {
+    background-position: -9px -44px;
+}
+
+.blazeBtn span.num5 {
+    background-position: 0 -55px;
+}
+
+.blazeBtn.off span.num5 {
+    background-position: -9px -55px;
+}
+
+.blazeBtn span.num6 {
+    background-position: 0 -66px;
+}
+
+.blazeBtn.off span.num6 {
+    background-position: -9px -66px;
+}
+
+.blazeBtn span.num7 {
+    background-position: 0 -77px;
+}
+
+.blazeBtn.off span.num7 {
+    background-position: -9px -77px;
+}
+
+.blazeBtn span.num8 {
+    background-position: 0 -88px;
+}
+
+.blazeBtn.off span.num8 {
+    background-position: -9px -88px;
+}
+
+.blazeBtn span.num9 {
+    background-position: 0 -99px;
+}
+
+.blazeBtn.off span.num9 {
+    background-position: -9px -99px;
+}
+
+.bossHpWrap {
+    width: 63px;
+    height: 9px;
+    font-size: 9px;
+    text-align: center;
+    line-height: 10px;
+}
+
+.bossHpWrap span {
+    display: block;
+    max-width: 100%;
+    height : 100%;
+    background-color: #00ff00;
+}
+
+/*救援や未受け取り報酬のリスト*/
+.blazeUserList .userStatusWrap {
+    float: left;
+    position: relative;
+    width: 174px;
+    height: 60px;
+    margin: 6px 0 0 16px;
+    color: #fff;
+}
+
+.blazeUserList .userName {
+    position: absolute;
+    top: -2px;
+    font-size: 11px;
+    text-align: center;
+    width: 100%;
+}
+
+.blazeUserList .bossHpWrap {
+    position: absolute;
+    bottom: 5px;
+    left: 26px;
+    width: 63px;
+    height: 9px;
+    font-size: 9px;
+    text-align: center;
+    line-height: 12px;
+}
+
+.blazeUserList .timeWrap,.blazeUserList .entryWrap {
+    position: absolute;
+    right: 0;
+    width: 55px;
+    font-size: 11px;
+}
+
+.blazeUserList .timeWrap {
+    top: 20px;
+}
+
+.blazeUserList .entryWrap {
+    top: 38px;
+}
+
+.blazeUserList .receiveGetBtn {
+    float: right;
+    cursor: pointer;
+    margin: 18px 6px 0 0;
+}
+
+/*ボスリスト*/
+.blazeBattleList .rewardWrap{
+    position: absolute;
+    bottom: 5px;
+    right: 117px;
+    width: 55px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.blazeBattleList .rewardWrap span{
+    display: inline-block;
+}
+
+/*獲得報酬リスト*/
+
+.eventItemRewardList {
+    display: table;
+    margin: 0 auto 3px;
+}
+
+.eventItemRewardList .eventItemName,.eventItemRewardList .eventItemContents {
+    float: left;
+    font-size: 12px;
+}
+
+.eventItemRewardList .eventItemName {
+    width: 90px;
+}
+
+.eventItemRewardList .eventItemIcon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size : 28px 130px;
+    width: 28px;
+    height: 26px;
+    vertical-align: top;
+    margin-top: -3px;
+}
+
+.eventItemRewardList [class*='iconBook'] {
+}
+
+.eventItemRewardList [class*='iconScroll'] {
+}
+
+.eventItemIcon.iconCrystal,.eventItemIcon.iconBook2,.eventItemIcon.iconScroll2 {
+    background-position: 0 0;
+}
+
+.eventItemIcon.iconDeed,.eventItemIcon.iconBook3,.eventItemIcon.iconScroll3 {
+    background-position: 0 -26px;
+}
+
+.eventItemIcon.iconJewel1,.eventItemIcon.iconBook4,.eventItemIcon.iconScroll4 {
+    background-position: 0 -52px;
+}
+
+.eventItemIcon.iconJewel2,.eventItemIcon.iconBook5,.eventItemIcon.iconScroll5 {
+    background-position: 0 -78px;
+}
+
+.eventItemIcon.iconJewel3,.eventItemIcon.iconBook6,.eventItemIcon.iconScroll6 {
+    background-position: 0 -104px;
+}
+
+.eventItemRewardList .eventItemContents {
+    width: 168px;
+    background: linear-gradient(to bottom, #0b5d77, #0c1b2e);
+    box-shadow: 0 2px 0 2px rgba(12,28,47,0.9) inset;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    padding: 0 5px;
+    margin-right: 8px;
+}
+
+/*****************救援＆召喚＆バトル準備ポップアップ*****************/
+
+/* 救援ポップアップ */
+
+#rescueDialog,#inBattleDialog {
+    top: -60px;
+}
+
+/* バトルポップアップ */
+
+#battleDialog {
+    top: -80px;
+}
+
+.battleBossImg {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : cover;
+    width: 310px;
+    height: 105px;
+    margin: -18px 0 0 -11px;
+}
+
+/* バトル準備ポップアップ */
+
+#battlePrepareDialog {
+    top: -67px;
+}
+
+.rescueDetail {
+    position: relative;
+}
+
+.rescueDetail .bossHpWrap,.rescueDetail .timeWrap,.rescueDetail .entryWrap {
+    position: absolute;
+    top: 47px;
+}
+
+.rescueDetail .bossHpWrap {
+    left: 49px;
+}
+
+.rescueDetail .timeWrap,.rescueDetail .entryWrap {
+    width: 55px;
+    font-size: 11px;
+    color: #fff;
+    line-height: 1;
+}
+
+.rescueDetail .timeWrap {
+    left: 150px;
+}
+
+.rescueDetail .entryWrap {
+    right: 20px;
+}
+
+.configTitleImg {
+    background-repeat: no-repeat;
+    background-size : cover;
+    width: 310px;
+    height: 20px;
+    margin: 10px 0 5px -12px;
+}
+
+.selectDeckWrap .configTitleImg {
+    background-position: 0 0;
+}
+
+.selectPositionWrap .configTitleImg {
+    background-position: 0 -20px;
+}
+
+.configWrap hr {
+    background: linear-gradient(to right, rgba(95, 89, 89, 0), #5F5959 40%, #5F5959 60%, rgba(95, 89, 89, 0));
+    height: 2px;
+    margin: 10px auto;
+}
+
+.configTitleImg + .btnWrap {
+    position: relative;
+    overflow: hidden;
+    height: 66px;
+}
+
+.selectPositionBtn {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size : cover;
+    width: 139px;
+    height: 66px;
+    cursor: pointer;
+}
+
+.selectPositionBtn.front {
+    left: 0;
+    background-position: 0 0;
+}
+
+.selectPositionBtn.back {
+    right: 0;
+    background-position: 0 -66px;
+}
+
+.configWrap .btnImgS {
+    margin: 0 auto;
+}
+
+/*******************TOP********************/
+.topImgWrap {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size : cover;
+    width: 320px;
+    height: 262px;
+    margin-top: -55px;
+}
+
+.topImgWrap.finish {
+    height: 165px;
+}
+
+/* ボタンまわり */
+
+.receiveBtn {
+    position: absolute;
+    top: 65px;
+    right: 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    -webkit-animation: receiveBtnAnim 2s linear 0s infinite;
+            animation: receiveBtnAnim 2s linear 0s infinite;
+}
+
+@-webkit-keyframes receiveBtnAnim {
+  0%,88% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(6deg);
+            transform: rotate(6deg);
+  }
+
+  92% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  94% {
+    -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
+  }
+
+  96% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  98% {
+    -webkit-transform: rotate(6deg);
+            transform: rotate(6deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes receiveBtnAnim {
+  0%,88% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(6deg);
+            transform: rotate(6deg);
+  }
+
+  92% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  94% {
+    -webkit-transform: rotate(-6deg);
+            transform: rotate(-6deg);
+  }
+
+  96% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+
+  98% {
+    -webkit-transform: rotate(6deg);
+            transform: rotate(6deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+.topBtnImg {
+    position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 320px 127px;
+    width: 320px;
+    height: 127px;
+}
+
+.topBtnImg.battle {
+}
+
+.actionBtn {
+    position: absolute;
+    display: block;
+    text-decoration: none;
+}
+
+.actionBtn:hover {
+    background: rgba(255,255,255, 0.25);
+    border-radius: 13px;
+}
+
+#deckBtn {
+    bottom: 63px;
+    left: 5px;
+    width: 50px;
+    height: 52px;
+}
+
+#infoBtn {
+    bottom: 7px;
+    left: 105px;
+    width: 110px;
+    height: 30px;
+    border-radius: 13px;
+}
+
+#inBattleBtn,#rescueListBtn {
+    position: absolute;
+    right: 5px;
+    background-repeat: no-repeat;
+    background-size: 90px 85px;
+    width: 45px;
+    height: 42.5px;
+    cursor: pointer;
+}
+
+#inBattleBtn.off,#rescueListBtn.off {
+    pointer-events: none;
+}
+
+#inBattleBtn {
+    background-position: 0 0;
+    top: 112px;
+}
+
+#inBattleBtn.off {
+    background-position: -45px 0;
+}
+
+#rescueListBtn {
+    background-position: 0 -42.5px;
+    top: 154px;
+}
+
+#rescueListBtn.off {
+    background-position: -45px -42.5px;
+}
+
+#questBtn,#battleBtn {
+    bottom: 5px;
+    width: 77px;
+    height: 55px;
+}
+
+#questBtn {
+    left: 5px;
+}
+
+#battleBtn {
+    right: 5px;
+}
+
+.actionBtnWrap {
+    position: relative;
+}
+
+.battleRemainTime {
+    display: inline-block;
+    position: relative;
+    top: -5px;
+    left: 30px;
+    background: linear-gradient(to bottom, #40425e 0%, #404363 5%, #40486d 10%, #374C77 40%, #41547A 70%, #485C81 75%, #43577C 100%) ;
+    color: #fff;
+    font-size: 9px;
+    text-align: center;
+    width: 43px;
+    line-height: 10px;
+    border-radius: 4px;
+    padding-top: 3px;
+}
+
+.battleRemainTime:after {
+    position: absolute;
+    top: 12px;
+    right: 21px;
+    content: "";
+    border: 3px solid transparent;
+    border-top: 5px solid #485C81;
+}
+
+/* 未受け取り報酬ポップアップ */
+#receiveListDialog,#receiveResultDialog {
+    top: -60px;
+}
+
+#receiveResultDialog .getItemImgWrap {
+    margin: 10px 0 -10px 7px;
+    overflow: hidden;
+}
+
+#receiveResultDialog .getItemImgWrap .getItemImg {
+    position: relative;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size:60px;
+    width: 60px;
+    height: 60px;
+    margin: 0 10px 10px 0;
+}
+
+#receiveResultDialog .getItemImgWrap .getItemImg .getItemAmount {
+    position: absolute;
+    right: 0;
+    font-size: 11px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    line-height: 1.2;
+    min-width: 10px;
+    padding: 0 3px;
+    text-align: center;
+}
+
+/* 探索ポップアップ */
+.questBossImg {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : cover;
+    width: 300px;
+    height: 100px;
+    margin-left: -6px;
+    text-align: center;
+}
+/*Nutaku: 英語長すぎるので調整 */
+.questBossImg .btnMR {
+    margin: 60px 0 0;
+    width: 130px;
+}
+
+/* バトル結果ポップアップ(失敗) */
+.battleResultImg {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : 310px 130px;
+    width: 310px;
+    height: 130px;
+    margin: -19px 0 0 -11px;
+}
+
+/* AP＆BPステータスまわり */
+.userParamWrap {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 320px 20px;
+    width: 320px;
+    height: 20px;
+    overflow: hidden;
+}
+
+.userParam {
+    float: left;
+    width: 160px;
+    color: #fff;
+    font-size: 11px;
+}
+
+.userParam p {
+    width: 50px;
+    margin-top: 2px;
+    text-align: center;
+    float: left;
+}
+
+.userParam:nth-child(1) p{
+    margin-left: 24px;
+}
+
+.userParam:nth-child(2) p{
+    margin-left: 16px;
+}
+
+.userParam .gaugeWrap {
+    width: 81px;
+    height: 11px;
+    float: left;
+    margin-top: 7px;
+}
+
+.userParam:nth-child(2) .gaugeWrap{
+    margin-left: 2px;
+}
+
+/* イベントアイテムステータスまわり */
+.itemStatusWrap {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 320px 39px;
+    width: 320px;
+    height: 39px;
+}
+
+.itemStatusWrap .itemStatusInner {
+	float: left;
+	width: 95px;
+	margin: 16px 0 0 9px;
+    color: #fff;
+    font-size: 9px;
+}
+
+.itemStatusWrap .itemStatusInner.total {
+	text-align: center;
+	margin: 15px 0 0 8px;
+    font-size: 10px;
+}
+
+.itemStatusWrap .itemStatusInner span {
+	display: inline-block;
+	width: 23px;
+	text-align: center;
+	margin-left: 8px;
+}
+
+.itemStatusWrap .itemStatusInner span:nth-child(1) {
+	margin-left: 1px;
+}
+
+/* 宝珠ガチャまわり */
+.crystalGachaTitleImg {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : 320px 138px;
+    width: 320px;
+    height: 138px;
+    margin: 10px 0 5px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    overflow: hidden;
+}
+
+.crystalGachaTitleImg p:nth-child(1){
+    margin-top: 75px;
+}
+
+.crystalGachaTitleImg p:nth-child(2){
+    margin-top: 15px;
+}
+
+#gachaResetConfirmWrap input {
+    width: 90px;
+    cursor: pointer;
+}
+
+#gachaResetResultWrap {
+    height: 265px;
+    overflow: hidden;
+}
+
+#gachaResetResultWrap p {
+    color: #7D7D7D;
+    font-size: 20px;
+    text-align: center;
+    margin: 90px 0;
+}
+
+/* 報酬リスト */
+.rewardListWrap {
+    height: 525px;
+    margin-bottom: 15px;
+}
+
+/* 宝珠報酬まわり */
+.jewelTypeBtnWrap {
+    width: 300px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.jewelTypeBtn {
+    position: relative;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : cover;
+    width: 97px;
+    height: 54px;
+    cursor: pointer;
+    margin-left: 3px;
+}
+
+.jewelTypeBtn.on {
+    pointer-events: none;
+}
+
+.jewelTypeBtn:nth-child(2){
+    background-position: 0 -54px;
+}
+
+.jewelTypeBtn:last-child {
+    background-position: 0 -108px;
+}
+
+.jewelTypeBtn span{
+    position: absolute;
+    top: 27px;
+    right: 18px;
+    width: 30px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+
+.rewardJewelListWrap {
+    display: none;
+    margin-top: 0 !important;
+}
+
+.rewardJewelListWrap:before,
+.rewardJewelListWrap:after {
+    position: absolute;
+    content: "";
+    border: 8px solid transparent;
+}
+
+.rewardJewelListWrap:before {
+    top: -20px;
+    border-bottom: 12px solid #AEAEAE;
+}
+
+.rewardJewelListWrap:after {
+    top: -18px;
+    border-bottom: 12px solid #e4e6d1;
+}
+
+.rewardJewelListWrap:nth-child(3):before,
+.rewardJewelListWrap:nth-child(3):after {
+    left: 48px;
+}
+
+.rewardJewelListWrap:nth-child(4):before,
+.rewardJewelListWrap:nth-child(4):after {
+    left: 148px;
+}
+
+.rewardJewelListWrap:nth-child(5):before,
+.rewardJewelListWrap:nth-child(5):after {
+    left: 248px;
+}
+
+/* 注意事項 */
+#blazeTop .toggleNextDom > div {
+    margin-bottom: 10px;
+    color: #5f3752;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/******************バトル結果画面*****************/
+
+#battle_result h1:first-child {
+    height: 190px;
+    margin-top: -35px;
+}
+
+#battle_result h1:first-child + .text-frame{
+    padding: 0 0 2px;
+    margin-top: 0;
+}
+
+.eventItemRewardList + .btnMR {
+    display: block;
+    width: 100px;
+    margin: 10px auto 0;
+}
+
+#rewardDetailDialog {
+    top: -20px;
+}
+
+#rewardDetailDialog .eventItemContents {
+    padding: 3px 5px;
+}
+
+.eventItemRewardStatus span,.eventItemTotalReward span {
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+}
+
+.eventItemRewardStatus span:nth-child(2),.eventItemTotalReward span:nth-child(2){
+    width: 95px;
+}
+
+.eventItemTotalReward {
+    position: relative;
+}
+
+.eventItemTotalReward:before {
+    content : " ";
+    position: absolute;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF 40%, #FFFFFF 60%, rgba(255, 255, 255, 0));
+    background-position: bottom;
+    background-repeat: no-repeat;
+    width: 165px;
+    height: 1px;
+}
+
+.mvpHeaderImg {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : 310px 32px;
+    width: 310px;
+    height: 32px;
+    margin: -10px 0 5px -12px;
+}
+
+.mvpWrap {
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.mvpTitleImg {
+    background-repeat: no-repeat;
+    background-size : cover;
+    width: 310px;
+    height: 25px;
+    margin-left: -12px;
+}
+
+.mvpTitleImg.deed {
+    background-position: 0 0;
+}
+
+.mvpTitleImg.damage {
+    background-position: 0 -25px;
+}
+
+.mvpTitleImg.paraUp {
+    background-position: 0 -50px;
+}
+
+.mvpTitleImg.paraDown {
+    background-position: 0 -75px;
+}
+
+/******************結晶ガチャ画面*****************/
+#crystalGacha > h1:first-child {
+    height: 19px;
+    margin: -8px 0 10px;
+}

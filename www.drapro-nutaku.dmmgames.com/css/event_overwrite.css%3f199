@@ -1,0 +1,653 @@
+@charset "UTF-8";
+
+/************************************************************
+イベント専用ページでglobalN.cssやother.cssのスタイルを上書きしたい際に使うべし
+************************************************************/
+
+/*共通スタイル(壊れる可能性大)*/
+
+.box {
+    color: #5f3752;
+    background: rgba(255,255,255,0.7);
+}
+
+ul.tab2, ul.tab3, ul.tab4, ul.tab5 {
+    background: none;
+}
+
+.bannerFrame a,
+.linkList a,
+.linkList2 a,
+.linkList3 {
+    font-weight: bold;
+}
+
+.bannerFrame {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*↓ボタン↓*/
+
+input[type="submit"].imgBtn {
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: 250px 60px;
+            background-size: 250px 60px;
+    width: 250px;
+    height: 45px;
+    border: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+
+/*キービジュアル*/
+
+.event > h1:first-child {
+    height: 170px;
+    margin-top: -40px;
+}
+
+/*レイド掃討戦TOP*/
+.eventTopImgWrap {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: 320px 335px;
+            background-size: 320px 335px;
+    width: 320px;
+    height: 335px;
+    margin-top: -35px;
+}
+
+.eventTopBtnWrap {
+    position: absolute;
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: 320px 115px;
+            background-size: 320px 115px;
+    width: 320px;
+    height: 115px;
+}
+
+.finish .eventTopBtnWrap {
+}
+
+.actionBtn {
+    display: block;
+    text-decoration: none;
+}
+
+.actionBtn:hover {
+    background: rgba(255,255,255, 0.25);
+    border-radius: 13px;
+}
+
+.actionBtnUpperWrap,.actionBtnLowerWrap {
+    position: relative;
+}
+
+/* イベントトップのボタンたち(上段) */
+
+.actionBtnUpperWrap .actionBtn {
+    position: absolute;
+}
+
+#guildgBtn {
+    top: 37px;
+    left: 105px;
+    width: 110px;
+    height: 30px;
+    border-radius: 13px;
+}
+
+#questBtn,#raidBtn {
+    top: 5px;
+    width: 90px;
+    height: 64px;
+}
+
+#questBtn {
+    left: 5px;
+}
+
+#raidBtn {
+    right: 5px;
+}
+
+.actionBtnWrap {
+    position: relative;
+}
+
+.strengthText {
+    position: absolute;
+    top: 48px;
+    left: 12px;
+    width: 66px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 9px;
+    background-image: -webkit-gradient(linear,left bottom, left top,color-stop(49%, transparent),color-stop(50%, rgba(0,0,0,.1))),-webkit-gradient(linear,left top, right top,from(transparent),color-stop(#000),to(transparent));
+    background-image: -webkit-linear-gradient(bottom,transparent 49%,rgba(0,0,0,.1) 50%),-webkit-linear-gradient(left,transparent,#000,transparent);
+    background-image: linear-gradient(to top,transparent 49%,rgba(0,0,0,.1) 50%),linear-gradient(to right,transparent,#000,transparent);
+    line-height: 1.2;
+}
+
+.actionBtnAccessories {
+    position: absolute;
+    top: 37px;
+    width: 51px;
+    height: 11px;
+}
+
+#apGauge.actionBtnAccessories {
+    left: 24px;
+}
+
+#bpGauge.actionBtnAccessories {
+    right: 11px;
+}
+
+.raidSubbtn {
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size : cover;
+            background-size : cover;
+    width: 38px;
+    height: 33px;
+}
+
+.raidSubbtn.appearBtn {
+    right: 15px;
+    top: -10px;
+}
+
+.raidSubbtn.reliefBtn {
+    right: 50px;
+    top: 7px;
+}
+
+.campaginBtn {
+    display: block;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: cover;
+            background-size: cover;
+}
+
+/* イベントトップのボタンたち(下段) */
+
+.actionBtnLowerWrap {
+    margin-top: 75px;
+}
+
+.actionBtnLowerWrap .actionBtn {
+    float: left;
+    width: 122px;
+    height: 32px;
+    margin-left: 24px;
+}
+
+.actionBtnLowerWrap .actionBtn:nth-child(2) {
+    margin-left: 27px;
+}
+
+/*集計中画像*/
+.compileImg {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: 320px 35px;
+            background-size: 320px 35px;
+    width: 320px;
+    height: 35px;
+    text-indent: 100%;
+    white-space: nowrap;
+    margin: 5px 0 -7px;
+}
+
+/* ダイアログ */
+#guildDialog {
+    top: -75px;
+}
+
+.rankDialog {
+    top: 195px;
+}
+
+.guildList {
+    display: none;
+    height: 380px;
+}
+
+.guildList:nth-child(2) {
+    display: block;
+}
+
+.dialog .rankingTitleImg {
+    width: 310px;
+    left: -2px;
+    margin-bottom: 0;
+}
+
+.dialog .damageRankList {
+    min-height: 475px;
+}
+
+.dialog .rankDialog .errorText {
+    padding-top: 200px;
+}
+
+.dialog .rankingTitleImg + .userList {
+    padding-bottom: 0 !important;
+}
+
+/* ランキングまわり */
+.eventTopRankWrap {
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: 300px 182px;
+            background-size: 300px 182px;
+    width: 300px;
+    height: 182px;
+    margin: -15px 0 -5px -10px;
+}
+
+.eventTopRank {
+    position: relative;
+    height: 60px;
+    padding-top: 5px;
+    margin-left: 83px;
+}
+
+.frame .eventTopRank p {
+    margin-bottom: 0;
+    text-align: right;
+    width: 130px;
+}
+
+.frame .eventTopRank.noBtn p {
+    width: auto;
+    margin-right: 10px;
+}
+
+.eventTopRank .damageRankBtn {
+    position: absolute;
+    top: 10px;
+    right: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: 80px 36px;
+            background-size: 80px 36px;
+    width: 80px;
+    height: 36px;
+}
+
+/* イベントアイテム画像 */
+.eventItemImg {
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: 320px 276px;
+    background-size: 320px 276px;
+    width: 320px;
+    height: 32px;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+    text-shadow: 0px 0px 5px #000, 0px 0px 10px #000, 0px 0px 20px #000, 0px 0px 15px #000;
+    padding-bottom: 244px;
+}
+
+/* エリア選択画面に出るバナーまわり */
+.bannerInnerBtnWrap {
+    width: 320px;
+    height: 130px;
+    overflow: hidden;
+}
+
+.bannerInnerBtn {
+    position: relative;
+    float: left;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size : cover;
+            background-size : cover;
+    width: 145px;
+    height: 130px;
+    margin-left: 10px;
+}
+
+.bannerInnerBtn.bannerInnerBtnR {
+}
+
+.bannerInnerBtn a {
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    left: 32px;
+    width: 87px;
+    height: 25px;
+    border-radius: 6px;
+}
+
+.bannerInnerBtn a:hover {
+    background: rgba(255,255,255,0.25);
+}
+.bannerInnerBtnWrap.bannerInnerBtnLarge {
+    height: 105px;
+}
+.bannerInnerBtnLarge .bannerInnerBtn {
+    width: 300px;
+    height: 105px;
+    margin: 0px auto;
+    float: none;
+}
+.bannerInnerBtnLarge .bannerInnerBtn a {
+    left: 70px;
+    width: 158px;
+    height: 26px;
+    border-radius: 12px;
+}
+
+/* 限界突破一覧ボタン */
+.damageListForTokko div.taC dl.form{
+    width: 185px;
+    margin: 0 auto;
+}
+.damageListForTokko div.taC dl.form dt{
+    line-height:inherit;
+    color:#09F;
+}
+.damageListForTokko div.taC dl.form dd{
+    width: 70px
+}
+
+/* ランキングページ報酬部分 */
+/* 総合pt・初撃ptランキング用 */
+.item_img {
+    height: auto !important;
+}
+.item_img img {
+    width: 30px;
+    height: auto !important;
+}
+/* 最高所撃ダメージpt用 */
+.dbRewardItem {
+    width: 90px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 12px;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.dbRewardItemHeader {
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    font-weight: normal;
+    background: -webkit-gradient(linear, left top, left bottom, from(#94163d), color-stop(0%, #aa3269), color-stop(10%, #9e266a), to(#b83f64));
+    background: -webkit-linear-gradient(top, #94163d 0%, #aa3269 0%, #9e266a 10%, #b83f64 100%);
+    background: linear-gradient(to bottom, #94163d 0%, #aa3269 0%, #9e266a 10%, #b83f64 100%);
+    border-radius: 8px 8px 0 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin: 0;
+    padding: 4px 5px;
+    display: block;
+}
+.dbRewardItem .img {
+    width: 80px;
+    position: relative;
+    margin: 5px;
+}
+.dbRewardItemName {
+    height: 40px;
+    color: #000;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    padding: 4px;
+}
+
+/* ----- 以下過去イベント -------------------- */
+/*↓バレンタイン↓*/
+#all.valentine {
+    color: #fff;
+}
+
+.valentine input[type="submit"].imgBtn {
+}
+.valentine .bannerFrame a,
+.valentine .linkList a,
+.valentine .linkList2 a,
+.valentine .linkList3 {
+    color: #DAE33B !important;
+}
+
+/*↓ホワイトデー↓*/
+#all.m_whiteday {
+    color: #fff;
+}
+
+.m_whiteday input[type="submit"].imgBtn {
+}
+
+.m_whiteday .bannerFrame a,
+.m_whiteday .linkList a,
+.m_whiteday .linkList2 a,
+.m_whiteday .linkList3 {
+    color: #fff !important;
+}
+
+/*↓2周年マラソン↓*/
+#all.m_2anniv {
+}
+
+.m_2anniv input[type="submit"].imgBtn {
+}
+
+.m_2anniv ul.tab2:after,.m_2anniv ul.tab3:after,.m_2anniv ul.tab4:after,.m_2anniv ul.tab5:after {
+}
+
+.m_2anniv .linkList.arrowR li,
+.m_2anniv .linkList.arrowL li {
+    -webkit-box-shadow: 0 0 15px 0 rgba(255,255,255,0.4) inset;
+            box-shadow: 0 0 15px 0 rgba(255,255,255,0.4) inset;
+}
+
+.m_2anniv .bannerFrame a,
+.m_2anniv .linkList a,
+.m_2anniv .linkList2 a,
+.m_2anniv .linkList3 {
+    color: #4c0000 !important;
+}
+
+/*↓4月デュアリス↓*/
+#all.m_dualis {
+}
+
+.m_dualis input[type="submit"].imgBtn {
+}
+
+.m_dualis ul.tab2:after,.m_dualis ul.tab3:after,.m_dualis ul.tab4:after,.m_dualis ul.tab5:after {
+}
+
+.m_dualis .linkList.arrowR li,
+.m_dualis .linkList.arrowL li {
+    -webkit-box-shadow: 0 0 15px 0 rgba(255,255,255,0.4) inset;
+            box-shadow: 0 0 15px 0 rgba(255,255,255,0.4) inset;
+}
+
+.m_dualis .bannerFrame a,
+.m_dualis .linkList a,
+.m_dualis .linkList2 a,
+.m_dualis .linkList3 {
+    color: #235800 !important;
+}
+
+
+/*↓5月禁書↓*/
+
+.m_kinsho input[type="submit"].imgBtn {
+}
+
+/*3×3のパネル*/
+.m_kinsho .eventItemBox {
+    width: 300px;
+    height: 375px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: 300px 375px;
+            background-size: 300px 375px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+.m_kinsho .eventItemBox a.itemImg {
+    display: block;
+    float: left;
+    width:100px;
+    height:125px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: 100px 125px;
+            background-size: 100px 125px;
+    color: #fff;
+}
+
+.m_kinsho .count_kText {
+    position: relative;
+    text-align: center;
+    font-size: 10px;
+    padding: 0 5px;
+    margin: 100px auto 0;
+    border-radius: 4px;
+    border: 1px solid;
+    width: 66px;
+    height: 15px;
+    line-height: 17px;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.m_kinsho .count_kText span {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.m_kinsho .count_kText span:nth-child(1) {
+    -webkit-animation: teropAnim 8s 0s infinite;
+            animation: teropAnim 8s 0s infinite;
+}
+
+@-webkit-keyframes teropAnim {
+  0%, 45% {
+    opacity: 1;
+  }
+
+  50%, 95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes teropAnim {
+  0%, 45% {
+    opacity: 1;
+  }
+
+  50%, 95% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.m_kinsho .count_kText span:nth-child(2) {
+    -webkit-animation: teropAnim2 8s 0s infinite;
+            animation: teropAnim2 8s 0s infinite;
+}
+
+@-webkit-keyframes teropAnim2 {
+  0%, 45% {
+    opacity: 0;
+  }
+
+  50%, 95% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes teropAnim2 {
+  0%, 45% {
+    opacity: 0;
+  }
+
+  50%, 95% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/*↓ウエディング↓*/
+#all.m_wedding {
+    color: #fff;
+}
+
+.m_wedding input[type="submit"].imgBtn {
+}
+
+
+#all.m_wedding .event > h1:first-child{
+    height: 170px;
+    margin-top: -36px;
+}
+
+.m_wedding .bannerFrame a,
+.m_wedding .linkList a,
+.m_wedding .linkList2 a,
+.m_wedding .linkList3 {
+    color: #D2008C  !important;
+}
+
+/*↓4月レイド掃討戦↓*/
+.r_school .campaginBtn {
+    top: -75px;
+    right: 3px;
+    width: 65px;
+    height: 70px;
+}
+
+.r_school .campaginBtn.compile {
+}
+
+.r_school .campaginBtn.result {
+}
+
+.r_school .campaginBtn span {
+    top: 25px;
+    left: -2px;
+}

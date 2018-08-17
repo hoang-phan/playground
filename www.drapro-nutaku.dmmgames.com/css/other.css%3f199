@@ -1,0 +1,1184 @@
+.power [class*="num"] {
+  display: inline-block;
+}
+
+.power span.num0 {
+  width: 18px;
+  height: 23.5px;
+  background-repeat: no-repeat;
+  background-position: -67.5px -136px;
+  background-size: 349px auto;
+}
+
+.power span.num1 {
+  width: 11px;
+  height: 22.5px;
+  background-repeat: no-repeat;
+  background-position: -309.5px 0;
+  background-size: 349px auto;
+}
+
+.power span.num2 {
+  width: 16.5px;
+  height: 23px;
+  background-repeat: no-repeat;
+  background-position: -304.5px -108.5px;
+  background-size: 349px auto;
+}
+
+.power span.num3 {
+  width: 17.5px;
+  height: 23.5px;
+  background-repeat: no-repeat;
+  background-position: -90px -136px;
+  background-size: 349px auto;
+}
+
+.power span.num4 {
+  width: 19px;
+  height: 22.5px;
+  background-repeat: no-repeat;
+  background-position: -304.5px -27px;
+  background-size: 349px auto;
+}
+
+.power span.num5 {
+  width: 17.5px;
+  height: 23px;
+  background-repeat: no-repeat;
+  background-position: -304.5px -81px;
+  background-size: 349px auto;
+}
+
+.power span.num6 {
+  width: 18px;
+  height: 23.5px;
+  background-repeat: no-repeat;
+  background-position: -45px -136px;
+  background-size: 349px auto;
+}
+
+.power span.num7 {
+  width: 17px;
+  height: 22.5px;
+  background-repeat: no-repeat;
+  background-position: -304.5px -54px;
+  background-size: 349px auto;
+}
+
+.power span.num8 {
+  width: 18px;
+  height: 23.5px;
+  background-repeat: no-repeat;
+  background-position: 0 -136px;
+  background-size: 349px auto;
+}
+
+.power span.num9 {
+  width: 18px;
+  height: 23.5px;
+  background-repeat: no-repeat;
+  background-position: -22.5px -136px;
+  background-size: 349px auto;
+}
+
+.power2 span.num0, #deck_total_bonus .power3 span.num0 {
+  width: 21px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -107.5px -483px;
+  background-size: 349px auto;
+}
+
+.power2 span.num1, #deck_total_bonus .power3 span.num1 {
+  width: 13px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: -170px -136px;
+  background-size: 349px auto;
+}
+
+.power2 span.num2, #deck_total_bonus .power3 span.num2 {
+  width: 19.5px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -241.5px -529.5px;
+  background-size: 349px auto;
+}
+
+.power2 span.num3, #deck_total_bonus .power3 span.num3 {
+  width: 20.5px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -184px -483px;
+  background-size: 349px auto;
+}
+
+.power2 span.num4, #deck_total_bonus .power3 span.num4 {
+  width: 22px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: -288.5px -299.5px;
+  background-size: 349px auto;
+}
+
+.power2 span.num5, #deck_total_bonus .power3 span.num5 {
+  width: 21px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: 0 -483px;
+  background-size: 349px auto;
+}
+
+.power2 span.num6, #deck_total_bonus .power3 span.num6 {
+  width: 21px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -133px -483px;
+  background-size: 349px auto;
+}
+
+.power2 span.num7, #deck_total_bonus .power3 span.num7 {
+  width: 20px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: -25.5px -483px;
+  background-size: 349px auto;
+}
+
+.power2 span.num8, #deck_total_bonus .power3 span.num8 {
+  width: 21.5px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -81.5px -483px;
+  background-size: 349px auto;
+}
+
+.power2 span.num9, #deck_total_bonus .power3 span.num9 {
+  width: 21px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -158.5px -483px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num0 {
+  width: 21px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -107.5px -483px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num1 {
+  width: 13px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: -170px -136px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num2 {
+  width: 19.5px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -241.5px -529.5px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num3 {
+  width: 20.5px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -184px -483px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num4 {
+  width: 22px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: -288.5px -299.5px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num5 {
+  width: 21px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: 0 -483px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num6 {
+  width: 21px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -133px -483px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num7 {
+  width: 20px;
+  height: 26.5px;
+  background-repeat: no-repeat;
+  background-position: -25.5px -483px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num8 {
+  width: 21.5px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -81.5px -483px;
+  background-size: 349px auto;
+}
+
+.mystatusDetail .guild-rank-frame > .num9 {
+  width: 21px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -158.5px -483px;
+  background-size: 349px auto;
+}
+
+#gTopNavMain {
+  width: 320px;
+  height: 54px;
+  background-repeat: no-repeat;
+  background-position: 0 -1071.5px;
+  background-size: 349px auto;
+}
+
+#gTopNavMain.other {
+  width: 320px;
+  height: 54px;
+  background-repeat: no-repeat;
+  background-position: 0 -1130px;
+  background-size: 349px auto;
+}
+
+#gBottomNav {
+  width: 320px;
+  height: 69px;
+  background-repeat: no-repeat;
+  background-position: 0 -1537.5px;
+  background-size: 349px auto;
+}
+
+.border-frame ul.more {
+  width: 310px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: 0 -370.5px;
+  background-size: 349px auto;
+}
+
+.border-frame ul.more.smallUnder {
+  width: 284px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: 0 -299.5px;
+  background-size: 349px auto;
+}
+
+.border-frame ul.more > li a:before {
+  width: 62px;
+  height: 19px;
+  background-repeat: no-repeat;
+  background-position: -79px -180.5px;
+  background-size: 349px auto;
+}
+
+.helpFrame h1, span.slide {
+  width: 310px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: 0 -445.5px;
+  background-size: 349px auto;
+}
+
+.helpFrame h1 {
+  padding: 0px;
+  line-height: 33px;
+  color: #FFFFFF;
+}
+
+#all > div .frame h1, .frame h1 {
+  width: 310px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: 0 -445.5px;
+  background-size: 349px auto;
+  position: relative;
+  top: -18px;
+  left: -11px;
+  padding-top: 7px;
+  margin-bottom: -13px;
+  color: #FFFFFF;
+  text-align: center;
+  height: 30px;
+}
+
+#gSubNav dd#gSubNav-GVR a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -64.5px -1294.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-GVRFREE a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -258px -1012px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Raid a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -199px -180.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Quest a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -241.5px -648.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Mix a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -263.5px -180.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Gacha a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -258px -1294.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Gift a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -193.5px -1294.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Job a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -193.5px -1012px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Costume a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -258px -1413.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Guild a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -64.5px -1473px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Chat a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -129px -1354px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-GuildNavi a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -258px -1235px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Deck a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -64.5px -1413.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Archive a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: 0 -1235px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Lvtree a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -129px -1413.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Card a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -193.5px -1354px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Item a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -64.5px -1235px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-MedalShop a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -129px -1294.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-BellShop a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -258px -1354px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-CoinShop a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -64.5px -1354px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Top a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -129px -1012px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Cheer a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: 0 -1354px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Mydata a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -239.5px -240px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Friend a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -64.5px -1012px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Info a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -241.5px -708px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Help a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -129px -1235px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Skill a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -265.5px -529.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dd#gSubNav-Hints a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -246px -767.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav #gSubNav-Close a, .btn-close {
+  width: 27px;
+  height: 27px;
+  background-repeat: no-repeat;
+  background-position: -50px -483px;
+  background-size: 349px auto;
+}
+
+#gSubNav #gSubNav-Harem a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -193.5px -1235px;
+  background-size: 349px auto;
+}
+
+#gSubNav #gSubNav-Tanmatu a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: -241.5px -589px;
+  background-size: 349px auto;
+}
+
+#gSubNav #gSubNav-ArchiveStory a {
+  width: 60px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-position: 0 -1473px;
+  background-size: 349px auto;
+}
+
+#gSubNav dt#gSubNav-Main-Title {
+  width: 300px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 -108.5px;
+  background-size: 349px auto;
+}
+
+#gSubNav dt#gSubNav-Job-Guild-Title {
+  width: 300px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 -54px;
+  background-size: 349px auto;
+}
+
+#gSubNav dt#gSubNav-Card-Title {
+  width: 305px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 349px auto;
+}
+
+#gSubNav dt#gSubNav-Item-Shop-Title {
+  width: 300px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 -27px;
+  background-size: 349px auto;
+}
+
+#gSubNav dt#gSubNav-Other-Title {
+  width: 300px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 -81px;
+  background-size: 349px auto;
+}
+
+ul.pager li:first-child {
+  width: 37px;
+  height: 37px;
+  background-repeat: no-repeat;
+  background-position: -156.5px -240px;
+  background-size: 349px auto;
+}
+
+ul.pager li:first-child a {
+  width: 37px;
+  height: 37px;
+  background-repeat: no-repeat;
+  background-position: -115px -240px;
+  background-size: 349px auto;
+}
+
+ul.pager li:last-child a {
+  width: 37px;
+  height: 37px;
+  background-repeat: no-repeat;
+  background-position: -198px -240px;
+  background-size: 349px auto;
+}
+
+ul.pager li:last-child {
+  width: 37px;
+  height: 37px;
+  background-repeat: no-repeat;
+  background-position: -73.5px -240px;
+  background-size: 349px auto;
+}
+
+a.btnImgL, input[type="submit"].btnImgL, .btnImgL {
+  width: 237px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: 0 -589px;
+  background-size: 349px auto;
+  padding: 0;
+  font-size: 16px;
+  color: #fff;
+  display: block;
+  margin: 10px auto 20px;
+  text-align: center;
+  line-height: 42px;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.7);
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+input[type="submit"].btnImgL {
+  line-height: 40px;
+}
+
+#all .btnImgM, .btnImgM-off {
+  display: inline-block;
+  line-height: 47px;
+  text-decoration: none;
+  text-align: center;
+}
+
+#all .btnImgM {
+  width: 140px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: -154.5px -965.5px;
+  background-size: 349px auto;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.btnImgM-off {
+  width: 140px;
+  height: 39px;
+  background-repeat: no-repeat;
+  background-position: 0 -1188.5px;
+  background-size: 349px auto;
+  color: #B8B8B8;
+  pointer-events: none;
+}
+
+.btnImgS, a.btnImgS, ul.btns li a, input[type="submit"].btnImgS {
+  width: 100px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -244.5px -136px;
+  background-size: 349px auto;
+  color: #fff;
+  display: block;
+  text-align: center;
+  line-height: 42px;
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.7);
+  border: none;
+  text-decoration: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+a.new:before {
+  width: 49px;
+  height: 19px;
+  background-repeat: no-repeat;
+  background-position: -145.5px -180.5px;
+  background-size: 349px auto;
+}
+
+.linkList.help a:before, .linkList a.help:before {
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: -187.5px -136px;
+  background-size: 349px auto;
+}
+
+.linkList.help a:before, .linkList a.help:before {
+  content: "";
+  position: absolute;
+  right: 2px;
+  top: 7px;
+}
+
+.linkList.arrowL a::before, .linkList a.arrowL::before, .linkList3.arrowL::before {
+  width: 20px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: -24.5px -240px;
+  background-size: 349px auto;
+}
+
+.linkList.arrowL a::before, .linkList a.arrowL::before, .linkList3.arrowL::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 5px;
+}
+
+.linkList.arrowR a:after, .linkList a.arrowR:after, .linkList2.arrowR a:after {
+  width: 23px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: -217px -136px;
+  background-size: 349px auto;
+}
+
+.linkList.arrowR a:after, .linkList a.arrowR:after, .linkList2.arrowR a:after {
+  content: "";
+  position: absolute;
+  right: 5px;
+  top: 9px;
+}
+
+.raid-ability-frame > h2 {
+  width: 310px;
+  height: 33px;
+  background-repeat: no-repeat;
+  background-position: 0 -445.5px;
+  background-size: 349px auto;
+}
+
+.border-frame ul.list a:after {
+  width: 23px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: -217px -136px;
+  background-size: 349px auto;
+}
+
+.border-frame ul.list a:after {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.border-frame ul.list a.smallArrow:after {
+  width: 15.33333px;
+  height: 16.66667px;
+  background-repeat: no-repeat;
+  background-position: -144.66667px -90.66667px;
+  background-size: 233px auto;
+}
+
+.border-frame ul.list a.smallArrow:after {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+
+.border-frame ul.more a:after {
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: -112px -136px;
+  background-size: 349px auto;
+}
+
+.border-frame ul.more a:after {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: -3px;
+}
+
+.btn-close {
+  display: inline-block;
+}
+
+.raidpage_bg_status {
+  width: 114px;
+  height: 22.5px;
+  background-repeat: no-repeat;
+  background-position: 0 -551.5px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_icon_next {
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: -193.5px -1164px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_icon_new {
+  width: 35px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: -39.5px -180.5px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_icon_combo {
+  width: 35px;
+  height: 15px;
+  background-repeat: no-repeat;
+  background-position: 0 -180.5px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_btn_reward {
+  width: 123px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-position: -118.5px -551.5px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_btn_raid_rescue {
+  width: 150px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: 0 -703px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_btn_raid_rescue.off {
+  width: 150px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: 0 -656.5px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_btn_raid_appear {
+  width: 150px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: -154.5px -656.5px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_btn_raid_appear.off {
+  width: 150px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: -144.5px -762.5px;
+  -webkit-background-size: 349px auto;
+  background-size: 349px auto;
+}
+
+.raidpage_btn_reward,
+.raidpage_btn_raid_rescue,
+.raidpage_btn_raid_appear {
+  display: block;
+}
+
+.raidpage_fullsize_btn a.btnImgL {
+  margin: 0 auto;
+}
+
+.raidpage_boss_info {
+  margin: 10px auto 0;
+  width: 308px;
+  border: 1px solid #AEAEAE;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #e4e6d1;
+}
+.raidpage_boss_info .imgArea {
+  float: left;
+  width: 129px;
+  position: relative;
+}
+.raidpage_boss_info .imgArea .btn_show_reward {
+  position: absolute;
+  bottom: 5px;
+  left: 4px;
+  text-indent: -9999px;
+}
+.raidpage_boss_info .imgArea .boss_img {
+  height: 98px;
+  overflow: hidden;
+}
+.raidpage_boss_info .imgArea .boss_img img {
+  width: 129px;
+}
+.raidpage_boss_info .textArea {
+  float: left;
+  width: 179px;
+}
+.raidpage_boss_info .textArea .boss_name,
+.raidpage_boss_info .textArea .raidpage_bg_status {
+  color: #fff;
+}
+.raidpage_boss_info .textArea .boss_name {
+  font-size: 12px;
+  background: url(https://cdn00.drapro-nutaku.dmmgames.com/static/image/sp/ui/sprite/other/barlink_normal.png) no-repeat 0 0;
+}
+.raidpage_boss_info .textArea .boss_name .boss_name_text {
+  padding: 1px 0 0 5px;
+}
+.raidpage_boss_info .textArea .boss_status .status {
+  float: left;
+  margin: 5px 0 0 0;
+  width: 114px;
+  font-size: 10px;
+  line-height: 1;
+}
+.raidpage_boss_info .textArea .boss_status .status .raidpage_bg_status .status_text {
+  display: table-cell;
+  vertical-align: middle;
+  height: 22.5px;
+  padding-left: 10px;
+}
+.raidpage_boss_info .textArea .boss_status .status .beat_num {
+  text-align: right;
+  padding: 6px 10px 6px 0;
+}
+.raidpage_boss_info .textArea .boss_status .reward {
+  float: left;
+  width: 60px;
+  margin: 8px 0 0 0;
+}
+.raidpage_boss_info .textArea .boss_status .reward .reward_img {
+  position: relative;
+  text-align: center;
+}
+.raidpage_boss_info .textArea .boss_status .reward .reward_img img {
+  height: 60px;
+}
+.raidpage_boss_info .textArea .boss_status .reward .raidpage_icon_next {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.raidpage_appear_state {
+  margin: 15px auto 10px;
+  padding: 0;
+}
+.raidpage_appear_state h1 {
+  margin-left: 0 !important;
+}
+.raidpage_appear_state .btn_raid {
+  float: left;
+  display: block;
+  width: 150px;
+  text-indent: -9999px;
+  position: relative;
+  overflow: hidden;
+}
+.raidpage_appear_state .btn_raid .icons {
+  display: table;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.raidpage_appear_state .btn_raid .icons span {
+  display: table-cell;
+  padding-left: 1px;
+}
+.raidpage_appear_state .btn_raid + .btn_raid {
+  float: right;
+}
+
+.raidpage_reward_arcana {
+  margin: 20px auto 0;
+  padding: 0;
+}
+.raidpage_reward_arcana h1 {
+  margin-left: 0 !important;
+}
+.raidpage_reward_arcana h2 {
+  margin: 0 0 10px 0;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data {
+  padding-bottom: 8px;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .imgArea {
+  float: left;
+  width: 170px;
+  text-align: center;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .imgArea img {
+  width: 160px;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea {
+  float: right;
+  width: 138px;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl {
+  font-size: 12px;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl dt, .raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl dd {
+  display: inline-block;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl dt {
+  padding-left: 5px;
+  color: #0970AA;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl dt:first-child {
+  padding-left: 0;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl dd {
+  padding-left: 2px;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl + dl {
+  margin-top: 2px;
+  padding-top: 3px;
+  background: -webkit-gradient(linear, left top, right top, from(#d2c18b), color-stop(30%, #d2c18b), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, #d2c18b 0%, #d2c18b 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, #d2c18b 0%, #d2c18b 30%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0));
+  -webkit-background-size: 138px 1px;
+          background-size: 138px 1px;
+  background-position: top left;
+  background-repeat: no-repeat;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl.skill .fcSkill,
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl.skill .fcName {
+  display: inline-block;
+  vertical-align: top;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl.skill .fcSkill {
+  width: 20px;
+}
+.raidpage_reward_arcana .raidpage_reward_arcana_data .textArea dl.skill .fcName {
+  width: 110px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.raidpage_reward_list {
+  margin-bottom: 20px !important;
+  color: #5f3752;
+}
+.raidpage_reward_list h2 {
+  margin-bottom: 10px;
+}
+.raidpage_reward_list .raidpage_reward_list_item {
+  display: table;
+  margin: 0 0 10px 0;
+}
+.raidpage_reward_list .raidpage_reward_list_item .item_img,
+.raidpage_reward_list .raidpage_reward_list_item .item_name {
+  display: table-cell;
+  vertical-align: middle;
+}
+.raidpage_reward_list .raidpage_reward_list_item .item_img {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+.raidpage_reward_list .raidpage_reward_list_item .item_img img {
+  height: 30px;
+}
+.raidpage_reward_list .raidpage_reward_list_item .item_name {
+  margin: 0;
+  padding: 0 0 0 10px;
+  min-height: 30px;
+}
+.raidpage_reward_list .notice {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(40%, #d2c18b), color-stop(60%, #d2c18b), color-stop(60%, rgba(0, 0, 0, 0)));
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #d2c18b 40%, #d2c18b 60%, rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), #d2c18b 40%, #d2c18b 60%, rgba(0, 0, 0, 0));
+  -webkit-background-size: 280px 1px;
+          background-size: 280px 1px;
+  background-position: top;
+  background-repeat: no-repeat;
+  padding: 7px 0 0 0;
+  margin: 0;
+  text-align: center;
+}
+
+.raidpage_battle_log {
+  padding: 0;
+}
+.raidpage_battle_log h1 {
+  margin-left: 0 !important;
+}
+.raidpage_battle_log h2 {
+  margin: 0 0 10px 0;
+  text-align: left;
+}
+.raidpage_battle_log .raidpage_battle_log_data {
+  margin-bottom: 5px;
+}
+.raidpage_battle_log .raidpage_battle_log_data .avatorArea {
+  float: left;
+  width: 70px;
+  text-align: center;
+}
+.raidpage_battle_log .raidpage_battle_log_data .avatorArea img {
+  width: 56px;
+}
+.raidpage_battle_log .raidpage_battle_log_data .textArea {
+  float: left;
+  width: 178px;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.raidpage_battle_log .raidpage_battle_log_data .textArea .dateTime {
+  margin: 0;
+  padding: 0;
+}
+.raidpage_battle_log .raidpage_battle_log_data .textArea .playerList dt {
+  display: inline-block;
+  width: 45px;
+  white-space: nowrap;
+  color: #0970AA;
+}
+.raidpage_battle_log .raidpage_battle_log_data .textArea .playerList dd {
+  display: inline-block;
+  width: 130px;
+  white-space: nowrap;
+}
+.raidpage_battle_log .raidpage_battle_log_data .textArea .playerList dd a {
+  color: #EC600B;
+}
+.raidpage_battle_log .raidpage_battle_log_data .btnArea {
+  float: right;
+  width: 58px;
+}
+.raidpage_battle_log .raidpage_battle_log_data .btnArea a.btnSR {
+  width: 50px;
+}

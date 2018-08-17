@@ -1,0 +1,33 @@
+define(function(){
+    var manifest = {
+        "characterName" : "cosmodragoner_man",
+        "images": [
+            {src:Game.define.assetPath+"/job/"+Game.settings.effectEnv+"/cosmodragoner_man/images/job_cosmodragoner_man_parts_01.png", id:"job_cosmodragoner_man_parts_01"},
+            {src:Game.define.assetPath+"/job/"+Game.settings.effectEnv+"/cosmodragoner_man/images/job_cosmodragoner_man_parts_02.png", id:"job_cosmodragoner_man_parts_02"},
+            {src:Game.define.assetPath+"/job/"+Game.settings.effectEnv+"/cosmodragoner_man/images/job_cosmodragoner_man_parts_03.png", id:"job_cosmodragoner_man_parts_03"}
+        ],
+        "file" : Game.define.assetPath+"/job/"+Game.settings.effectEnv+"/cosmodragoner_man/cosmodragoner_man.js",
+
+        sound : {
+            ogg : [
+                { id : "cosmodragoner_man_magic", src : Game.define.sePath+"/job/cosmodragoner/cosmodragoner_magic.ogg", type : "audio/ogg"},
+                { id : "cosmodragoner_man_attack", src : Game.define.sePath+"/job/cosmodragoner/cosmodragoner_attack.ogg", type : "audio/ogg"},
+                { id : "cosmodragoner_man_arcana", src : Game.define.sePath+"/job/cosmodragoner/cosmodragoner_arcana.ogg", type : "audio/ogg"},
+                { id : "cosmodragoner_man_special", src : Game.define.sePath+"/job/common/special.ogg", type : "audio/ogg"},
+                { id : "cosmodragoner_man_cheer", src : Game.define.sePath+"/job/common/cheer.ogg", type : "audio/ogg"}
+
+
+            ],
+            aac : [
+                { id : "cosmodragoner_man_magic", src : Game.define.sePath+"/job/cosmodragoner/cosmodragoner_magic.aac", type : "audio/aac"},
+                { id : "cosmodragoner_man_attack", src : Game.define.sePath+"/job/cosmodragoner/cosmodragoner_attack.aac", type : "audio/aac"},
+                { id : "cosmodragoner_man_arcana", src : Game.define.sePath+"/job/cosmodragoner/cosmodragoner_arcana.aac", type : "audio/aac"},
+                { id : "cosmodragoner_man_special", src : Game.define.sePath+"/job/common/special.aac", type : "audio/aac"},
+                { id : "cosmodragoner_man_cheer", src : Game.define.sePath+"/job/common/cheer.aac", type : "audio/aac"}
+            ]
+        }
+
+    };
+
+    return manifest;
+});

@@ -1,0 +1,294 @@
+#raidNew-raidbossCanvasF{
+    position: relative;
+    width : 320px;
+    height : 320px;
+}
+.raidNew-canvas{
+    position : absolute;
+    top : 0;
+    left : 0;
+    width : 320px;
+    height : 320px;
+}
+
+#raidDefaultImgWrap > div {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+}
+
+.raidNew-bg {
+    top : 0;
+    left : 0;
+    width: 320px;
+    height: 320px;
+}
+
+.raidNew-mycharacter{
+    top : 170px;
+    right : 0;
+    width : 90px;
+    height :90px;
+    -webkit-animation: raidbossCharacterAnimation 2s linear 0s infinite alternate;
+            animation: raidbossCharacterAnimation 2s linear 0s infinite alternate;
+    -webkit-transform-origin:50% 100%;
+            transform-origin:50% 100%;
+}
+@-webkit-keyframes raidbossCharacterAnimation{
+    0%{
+        -webkit-transform : scale(1);
+                transform : scale(1);
+    }
+    100%{
+        -webkit-transform : scale(1.1);
+                transform : scale(1.1);
+    }
+
+}
+@keyframes raidbossCharacterAnimation{
+    0%{
+        -webkit-transform : scale(1);
+                transform : scale(1);
+    }
+    100%{
+        -webkit-transform : scale(1.1);
+                transform : scale(1.1);
+    }
+
+}
+.raidNew-boss{
+    width : 300px;
+    height : 300px;
+    top :-4;
+    left : -88px;
+    -webkit-animation: raidbossAnimation 2.5s linear 0s infinite alternate;
+            animation: raidbossAnimation 2.5s linear 0s infinite alternate;
+    -webkit-transform-origin:50% 90%;
+            transform-origin:50% 90%;
+}
+@-webkit-keyframes raidbossAnimation{
+    0%{
+        -webkit-transform : scale(1);
+                transform : scale(1);
+    }
+    100%{
+        -webkit-transform : scale(1.05);
+                transform : scale(1.05);
+    }
+}
+@keyframes raidbossAnimation{
+    0%{
+        -webkit-transform : scale(1);
+                transform : scale(1);
+    }
+    100%{
+        -webkit-transform : scale(1.05);
+                transform : scale(1.05);
+    }
+}
+
+#raidAnimWrap #loading {
+    top: 0;
+}
+
+#raidNew-levelUpF{
+    position: absolute;
+    top: 60px;
+    left: 5px;
+}
+
+#raidNew-levelUpClose{
+    width : 100px;
+}
+#raidNew-entryF{
+    position : absolute;
+    bottom: 5px;
+    right : 0;
+    background-size : 115px 30px;
+    width : 115px;
+    height : 30px;
+}
+
+#raidNew-bpF{
+    width :320px;
+    height : 11px;
+    position : absolute;
+    top : 323px;
+}
+#raidNew-bp{
+    width : 100px;
+    height : 14px;
+    color : #ffffff;
+    position : absolute;
+    font-size :11px;
+    line-height : 14px;
+    left : 50px;
+}
+
+#raidNew-bpWaku{
+    width : 194px;
+    height : 11px;
+    position : relative;
+    left : 100px;
+}
+
+#raidNew-bpBar{
+    max-width: 194px;
+    height: 11px;
+    background-repeat: repeat;
+    position: absolute;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAWCAIAAACOpGH9AAAAW0lEQVQIHWMQtk1iYgCC//9vMIsl2DEr6psxhf4UZL6nc5FJgJePifOtPBM3OzsTMysjk7X9EyYBNiYm1l8MTJJ8MlB9/5k2PDrBzCDzk8mXW535wBNuJgZmVgCBzxTkMBNe+wAAAABJRU5ErkJggg==);
+    background-size:1px 11px;
+}
+
+#raidNew-bpBar:before,#raidNew-bpBar:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 3px;
+    height: 11px;
+    background-repeat: no-repeat;
+    background-size: 3px 11px;
+}
+
+#raidNew-bpBar:before{
+    right: -3px;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAWCAYAAADjGu3TAAABfklEQVR4AVXMP2sUQQBA8Tc7M24uWW4v0fytksJGP4JJoQbtI1jYiPEbGNBWrIQUaUWuUAS1EgQbRWyUgBCUIB6Iyd4hertyHBc2Fze57OyI3MDir33wxMml1RR4D7wFNnD+BYvj4g3gpxe9Wqd+e535U2cAloFHAOL1oGGn9Anm92ZZvvmAVucrwC1vp9ll+1efbS9h7cpVnEtq7HdMXs3YbcacWzgN1oIQi+rhizUoAGBx5SnYAoQM1GBE0usek6U51h4MAxIl0xmsyTjaz4B8uAKU70ukASEFIMDxrLIYZQALaHDUyvmczd0KjfEDYLQMNQ0LlYCjyWPAL0NVCqa1x6EO/1t5wgwHk1oAlCE1BfvG4ksPWxTl6vrljyT9hNanb3Tbf3D66mX7C3EUo5oJnc8TOB/U8/p9aoc5S6NzPNkyIATAG3XRn+ZHa4Z7jYhOsUdlLNgENtSdZzsgIpCa8TDcOjs3tQqgtD8ymK2F3yeqwbvH1y7cBXoAfwFcIootF9u54AAAAABJRU5ErkJggg==);
+}
+
+#raidNew-bpBar:after{
+    left: -3px;
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAWCAYAAADjGu3TAAABgUlEQVQoFQXBwUtTcQAA4O/33tv0qXPakh1WqHhICowgOgizUCG8dPEUdMhdOnsIggr6QzoUdOwvEAkkAi9Rih2SIA9mzWyly1a67fV9AQBK1doy5lENUKrWKniGeYAE8BxzY2cnPaotmp1pSErV2jLmxkcuWXm6bH9422qjKcE8PFxa0h4Otg5inz4ei1CVZWZnhuydHjn6/FV7fVuCgqxr4fEoEBHiIAJZ1079RL3VddIbSwd7JSDL/GsW9fan4qNU2ipIAEIcxDl6emJpkhcBkOkkHVmSifIkAOXLpy6Wi6Yn2vqTAxHAxEjReDpgKMdwLkgAxnJF5VxkMA7y3SACGMkFfQgdKoXzEoCeONLsZNJOFyRoonBvccXfsKv+67tSGkR4Da/Wvvkis9lqW2u2xX2jV8qy7s2NzW23p87Y2nlr4/07ASo3am9ax7+nK/0VtesLps41BLh158GFD3v7L34eHl7VOSXrimH1yf3G3WuTL9d3f/Tlk9zAn3Zn6D95wn2TYt5jXwAAAABJRU5ErkJggg==);
+}
+
+#raidNew-btnF{
+    width : 320px;
+    height : 106px;
+    background-size : 320px 106px;
+    position : relative;
+}
+
+#raidNew-btnBpRecover,#raidNew-btnAttack20,#raidNew-btnAttack50 {
+    background-repeat: no-repeat;
+    background-size: 100px 65px;
+    width : 100px ;
+    height : 65px;
+    display : none;
+}
+
+#raidNew-btnBpRecover.off,#raidNew-btnAttack20.off,#raidNew-btnAttack50.off {
+    pointer-events:none;
+}
+
+#raidNew-btnBpRecover{
+    left : 8px;
+    top : 24px;
+}
+#raidNew-btnBpRecover.off{
+}
+
+#raidNew-btnAttack20{
+    left : 110px;
+    top : 19px;
+}
+#raidNew-btnAttack20.off{
+}
+#raidNew-btnAttack50{
+    left : 213px;
+    top : 24px;
+}
+#raidNew-btnAttack50.off{
+
+}
+#raidNew-btnAttackFree{
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size : cover;
+    top : 31px;
+    left: 0;
+    right: 0;
+    width : 240px;
+    height : 45px;
+    margin: 0 auto;
+}
+
+/*レイド掃討戦用初回btn*/
+#raidNew-btnAttackFree.evRaid {
+    width : 250px;
+    height : 42px;
+}
+
+.raidNew-btn {
+    position : absolute;
+}
+.raidNew-levelupText{
+    text-align:center;
+}
+.raidNew-abilityF{
+    height : 130px !important;
+    display : none;
+}
+#abilityBtn{
+   position : absolute;
+    bottom : 10px;
+    left : 10px;
+}
+#abilityCloseBtn{
+    position : absolute;
+    bottom : 10px;
+    right : 10px;
+}
+
+.entryNum{
+    width : 18px;
+    height :25px;
+    background-size: 18px 25px;
+    position : absolute;
+    top : 2px;
+
+}
+#raidNew-entryNum1{
+    left : 3px;
+}
+#raidNew-entryNum2{
+    left : 20px;
+}
+#raidNew-loader{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 320px;
+    background-color: rgba(0,0,0,0.5);
+    pointer-events: none;
+    display: none;
+}
+
+#loading_text{
+    display: block;
+    text-align: center;
+    margin: 160px auto 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Helvetica Neue LT Std, Arial, Helvetica, sans-serif;
+    -webkit-animation: loading-anim 0.5s linear 0s infinite alternate;
+            animation: loading-anim 0.5s linear 0s infinite alternate;
+}
+ @-webkit-keyframes loading-anim {
+    0% {
+     opacity: 0.3;
+    }
+    100% {
+     opacity: 1;
+    }
+}
+ @keyframes loading-anim {
+    0% {
+     opacity: 0.3;
+    }
+    100% {
+     opacity: 1;
+    }
+}

@@ -1,0 +1,1180 @@
+html, body, #dmm-app-container {
+  width: 940px;
+  height: 804px;
+  max-height: 804px;
+}
+
+#all, #mypage {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+}
+
+.mypageBg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  background-size: cover;
+}
+
+#popup {
+  width: 308px;
+  top: 0;
+  left: 5px;
+  border: 1px solid #5f4b29;
+  border-radius: 5px;
+  background: #daddc7;
+  padding: 10px 0;
+}
+
+#mypage [class^="thum_"] {
+  background-size: 284px 66px;
+  width: 284px;
+  line-height: 1.5;
+  height: 66px;
+  margin: 0 auto !important;
+  color: #000;
+  padding: 14px 16px 0px 80px !important;
+}
+
+.btn-close {
+  position: absolute;
+  top: -15px;
+  right: 5px;
+  cursor: pointer;
+}
+
+#mypageMain {
+  height: 100% !important;
+}
+#mypageMain .btn-baseImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: none;
+}
+#mypageMain .sound-area {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: auto;
+}
+
+#mypageCards {
+  width: 640px;
+  height: 832px;
+  top: 90px;
+  left: 360px;
+  margin-left: auto;
+}
+#mypageCards li.jobTopImg img,
+#mypageCards li img {
+  width: 640px !important;
+  height: 884px !important;
+  max-width: 100%;
+}
+
+#mypageBtnArea {
+  width: 432px;
+  height: 408px;
+  background-repeat: no-repeat;
+  background-position: 0 -548px;
+  background-size: 580px auto;
+  position: absolute;
+  top: 88px;
+  left: 0;
+}
+
+#mypageSideBtnArea {
+  width: 125px;
+  height: 330px;
+  background-repeat: no-repeat;
+  background-position: -198px -122px;
+  background-size: 580px auto;
+  position: absolute;
+  top: 88px;
+  right: 0;
+}
+
+.countFrame {
+  width: 50px;
+  height: 36px;
+  background-repeat: no-repeat;
+  background-position: -130px -62px;
+  background-size: 580px auto;
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: -18px;
+  text-align: center;
+  margin: 0 auto;
+}
+.countFrame.infoMax {
+  width: 60px;
+  height: 36px;
+  background-repeat: no-repeat;
+  background-position: 0 -62px;
+  background-size: 580px auto;
+}
+
+.countFrameScale {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -1px;
+  -webkit-transform: scale3d(0.7, 0.7, 1);
+          transform: scale3d(0.7, 0.7, 1);
+}
+
+.countNumBase {
+  display: inline-block;
+}
+.countNumBase:last-child {
+  margin-left: -18px;
+}
+
+.countNum0 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -550px -62px;
+  background-size: 580px auto;
+}
+
+.countNum1 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -80px -62px;
+  background-size: 580px auto;
+}
+
+.countNum2 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -450px -62px;
+  background-size: 580px auto;
+}
+
+.countNum3 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: 0 -122px;
+  background-size: 580px auto;
+}
+
+.countNum4 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -400px -62px;
+  background-size: 580px auto;
+}
+
+.countNum5 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -200px -62px;
+  background-size: 580px auto;
+}
+
+.countNum6 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -500px -62px;
+  background-size: 580px auto;
+}
+
+.countNum7 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -350px -62px;
+  background-size: 580px auto;
+}
+
+.countNum8 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -300px -62px;
+  background-size: 580px auto;
+}
+
+.countNum9 {
+  width: 30px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: -250px -62px;
+  background-size: 580px auto;
+}
+
+.comboStatusBtn {
+  width: 116px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: -259px 0;
+  background-size: 580px auto;
+  position: absolute;
+  left: 60px;
+  bottom: 36px;
+}
+.comboStatusBtn.comboOn {
+  width: 116px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: -123px 0;
+  background-size: 580px auto;
+}
+
+.reliefStatusBtn {
+  width: 128px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: -271px -472px;
+  background-size: 580px auto;
+  position: absolute;
+  right: 50px;
+  bottom: 28px;
+  display: block;
+}
+.reliefStatusBtn .helpCount {
+  width: 48px;
+  height: 40px;
+  position: absolute;
+  right: 74px;
+  bottom: 12px;
+  -webkit-transform: scale3d(0.9, 0.8, 1);
+          transform: scale3d(0.9, 0.8, 1);
+  opacity: 0.7;
+}
+.reliefStatusBtn.helpNow {
+  width: 128px;
+  height: 56px;
+  background-repeat: no-repeat;
+  background-position: -123px -472px;
+  background-size: 580px auto;
+}
+.reliefStatusBtn.helpNow .helpCount {
+  opacity: 1;
+}
+.reliefStatusBtn.helpNow .helpCount .countNumBase:last-child {
+  margin-left: -20px;
+}
+
+#mypageCharaSound {
+  width: 103px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 580px auto;
+  position: absolute;
+  top: auto;
+  left: 365px;
+  bottom: 6px;
+  display: block;
+}
+#mypageCharaSound.charavoise_on {
+  width: 103px;
+  height: 42px;
+  background-repeat: no-repeat;
+  background-position: 0 -472px;
+  background-size: 580px auto;
+}
+
+#head-line {
+  position: absolute;
+  top: 100px;
+  right: 182px;
+  z-index: 1;
+}
+
+.btnNew {
+  width: 59px;
+  height: 59px;
+  background-repeat: no-repeat;
+  background-position: -158px -87px;
+  background-size: 217px auto;
+  position: absolute;
+  top: 10px;
+  left: 185px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btnNew:hover {
+  width: 59px;
+  height: 59px;
+  background-repeat: no-repeat;
+  background-position: 0 -87px;
+  background-size: 217px auto;
+}
+.btnNew:active {
+  width: 59px;
+  height: 59px;
+  background-repeat: no-repeat;
+  background-position: -79px -87px;
+  background-size: 217px auto;
+}
+
+.btnGacha {
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position: -94px -635px;
+  background-size: 217px auto;
+  position: absolute;
+  top: 102px;
+  right: 49px;
+  display: block;
+}
+.btnGacha:hover {
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position: 0 -535px;
+  background-size: 217px auto;
+}
+.btnGacha:active {
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position: -100px -535px;
+  background-size: 217px auto;
+}
+
+.btnMix {
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position: 0 -735px;
+  background-size: 217px auto;
+  position: absolute;
+  top: 102px;
+  left: 46px;
+  display: block;
+}
+.btnMix:hover {
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position: 0 -835px;
+  background-size: 217px auto;
+}
+.btnMix:active {
+  width: 80px;
+  height: 80px;
+  background-repeat: no-repeat;
+  background-position: -100px -735px;
+  background-size: 217px auto;
+}
+
+.btnDeck {
+  width: 67px;
+  height: 67px;
+  background-repeat: no-repeat;
+  background-position: 0 -1077px;
+  background-size: 217px auto;
+  position: absolute;
+  top: 34px;
+  left: 98px;
+  display: block;
+}
+.btnDeck:hover {
+  width: 67px;
+  height: 67px;
+  background-repeat: no-repeat;
+  background-position: -87px 0;
+  background-size: 217px auto;
+}
+.btnDeck:active {
+  width: 67px;
+  height: 67px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 217px auto;
+}
+
+.btnGuild {
+  width: 67px;
+  height: 67px;
+  background-repeat: no-repeat;
+  background-position: 0 -166px;
+  background-size: 217px auto;
+  position: absolute;
+  top: 34px;
+  right: 101px;
+}
+.btnGuild:hover {
+  width: 67px;
+  height: 67px;
+  background-repeat: no-repeat;
+  background-position: 0 -253px;
+  background-size: 217px auto;
+}
+.btnGuild:active {
+  width: 67px;
+  height: 67px;
+  background-repeat: no-repeat;
+  background-position: -87px -166px;
+  background-size: 217px auto;
+}
+
+.missionBtn {
+  width: 74px;
+  height: 74px;
+  background-repeat: no-repeat;
+  background-position: 0 -441px;
+  background-size: 217px auto;
+  position: absolute;
+  top: 22px;
+  left: 25px;
+  display: block;
+}
+.missionBtn:hover {
+  width: 74px;
+  height: 74px;
+  background-repeat: no-repeat;
+  background-position: -94px -347px;
+  background-size: 217px auto;
+}
+.missionBtn:active {
+  width: 74px;
+  height: 74px;
+  background-repeat: no-repeat;
+  background-position: 0 -347px;
+  background-size: 217px auto;
+}
+
+.giftBtn {
+  width: 74px;
+  height: 74px;
+  background-repeat: no-repeat;
+  background-position: -94px -441px;
+  background-size: 217px auto;
+  position: absolute;
+  top: 116px;
+  left: 25px;
+  display: block;
+}
+.giftBtn:hover {
+  width: 74px;
+  height: 74px;
+  background-repeat: no-repeat;
+  background-position: -87px -253px;
+  background-size: 217px auto;
+}
+.giftBtn:active {
+  width: 74px;
+  height: 74px;
+  background-repeat: no-repeat;
+  background-position: 0 -635px;
+  background-size: 217px auto;
+}
+
+.haremBtn {
+  width: 98px;
+  height: 101px;
+  background-repeat: no-repeat;
+  background-position: -87px -1077px;
+  background-size: 217px auto;
+  position: absolute;
+  bottom: 22px;
+  left: 13px;
+  display: block;
+}
+.haremBtn:hover {
+  width: 98px;
+  height: 101px;
+  background-repeat: no-repeat;
+  background-position: 0 -956px;
+  background-size: 217px auto;
+}
+.haremBtn:active {
+  width: 98px;
+  height: 101px;
+  background-repeat: no-repeat;
+  background-position: -100px -835px;
+  background-size: 217px auto;
+}
+.haremBtn:hover .haremEffect, .haremBtn:active .haremEffect {
+  width: 200px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: 0 -2548px;
+  background-size: 217px auto;
+  position: absolute;
+  top: -48px;
+  right: -51px;
+  -webkit-transform: scale3d(0, 0, 0);
+          transform: scale3d(0, 0, 0);
+  opacity: 0;
+  pointer-events: none;
+  -webkit-animation: haremEffect-anime;
+          animation: haremEffect-anime;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes haremEffect-anime {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0, 0, 0);
+            transform: scale3d(0, 0, 0);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.93, 0.93, 0.93);
+            transform: scale3d(0.93, 0.93, 0.93);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes haremEffect-anime {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale3d(0, 0, 0);
+            transform: scale3d(0, 0, 0);
+  }
+  80% {
+    opacity: 0.5;
+    -webkit-transform: scale3d(0.93, 0.93, 0.93);
+            transform: scale3d(0.93, 0.93, 0.93);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+.election {
+  position: absolute;
+  top: 120px;
+  left: 402px;
+  z-index: 1;
+}
+.election.open {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -2098px;
+  background-size: 217px auto;
+}
+.election.open:hover {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -1348px;
+  background-size: 217px auto;
+}
+.election.open:active {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -1948px;
+  background-size: 217px auto;
+}
+.election.aggregate {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -2248px;
+  background-size: 217px auto;
+}
+.election.aggregate:hover {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -1498px;
+  background-size: 217px auto;
+}
+.election.aggregate:active {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -1648px;
+  background-size: 217px auto;
+}
+.election.result {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -1198px;
+  background-size: 217px auto;
+}
+.election.result:hover {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -2398px;
+  background-size: 217px auto;
+}
+.election.result:active {
+  width: 130px;
+  height: 130px;
+  background-repeat: no-repeat;
+  background-position: 0 -1798px;
+  background-size: 217px auto;
+}
+.election .countFrame {
+  bottom: -10px;
+}
+
+.btnChange {
+  position: absolute;
+  top: 424px;
+  right: 0;
+}
+.btnChange .btn-arukana-next {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 150px auto;
+  display: block;
+}
+.btnChange .btn-arukana-next:hover {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -232px;
+  background-size: 150px auto;
+}
+.btnChange .btn-arukana-next:active {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -116px;
+  background-size: 150px auto;
+}
+
+.btnSound {
+  position: absolute;
+  top: 510px;
+  right: 0;
+}
+.btnSound #Btnsound {
+  display: block;
+}
+.btnSound .btn-sound {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -812px;
+  background-size: 150px auto;
+}
+.btnSound .btn-sound:hover {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -464px;
+  background-size: 150px auto;
+}
+.btnSound .btn-sound:active {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -696px;
+  background-size: 150px auto;
+}
+.btnSound .btn-sound-off {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -928px;
+  background-size: 150px auto;
+}
+.btnSound .btn-sound-off:hover {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -348px;
+  background-size: 150px auto;
+}
+.btnSound .btn-sound-off:active {
+  width: 110px;
+  height: 96px;
+  background-repeat: no-repeat;
+  background-position: 0 -580px;
+  background-size: 150px auto;
+}
+
+.btnRaid {
+  width: 99px;
+  height: 99px;
+  background-repeat: no-repeat;
+  background-position: 0 -1282px;
+  background-size: 150px auto;
+  position: absolute;
+  left: 167px;
+  bottom: 36px;
+  z-index: 1;
+}
+.btnRaid:hover {
+  width: 99px;
+  height: 99px;
+  background-repeat: no-repeat;
+  background-position: 0 -1044px;
+  background-size: 150px auto;
+}
+.btnRaid:active {
+  width: 99px;
+  height: 99px;
+  background-repeat: no-repeat;
+  background-position: 0 -1163px;
+  background-size: 150px auto;
+}
+.btnRaid.newRaid {
+  width: 99px;
+  height: 102px;
+  background-repeat: no-repeat;
+  background-position: 0 -1523px;
+  background-size: 150px auto;
+}
+.btnRaid.newRaid:hover {
+  width: 99px;
+  height: 102px;
+  background-repeat: no-repeat;
+  background-position: 0 -1645px;
+  background-size: 150px auto;
+}
+.btnRaid.newRaid:active {
+  width: 99px;
+  height: 102px;
+  background-repeat: no-repeat;
+  background-position: 0 -1401px;
+  background-size: 150px auto;
+}
+
+.btnQuest {
+  width: 116px;
+  height: 114px;
+  background-repeat: no-repeat;
+  background-position: 0 -1901px;
+  background-size: 150px auto;
+  position: absolute;
+  right: 42px;
+  bottom: 108px;
+  z-index: 2;
+}
+.btnQuest:hover {
+  width: 116px;
+  height: 114px;
+  background-repeat: no-repeat;
+  background-position: 0 -2571px;
+  background-size: 150px auto;
+}
+.btnQuest:active {
+  width: 116px;
+  height: 114px;
+  background-repeat: no-repeat;
+  background-position: 0 -2705px;
+  background-size: 150px auto;
+}
+
+.btnGvr {
+  width: 116px;
+  height: 114px;
+  background-repeat: no-repeat;
+  background-position: 0 -2437px;
+  background-size: 150px auto;
+  position: absolute;
+  left: 38px;
+  bottom: 108px;
+  display: block;
+  z-index: 2;
+}
+.btnGvr.battleNow {
+  width: 116px;
+  height: 114px;
+  background-repeat: no-repeat;
+  background-position: 0 -2169px;
+  background-size: 150px auto;
+}
+.btnGvr:hover {
+  width: 116px;
+  height: 114px;
+  background-repeat: no-repeat;
+  background-position: 0 -2035px;
+  background-size: 150px auto;
+}
+.btnGvr:active {
+  width: 116px;
+  height: 114px;
+  background-repeat: no-repeat;
+  background-position: 0 -2303px;
+  background-size: 150px auto;
+}
+
+.btnGvgvr {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: 0 -2839px;
+  background-size: 150px auto;
+  position: absolute;
+  left: 140px;
+  bottom: 164px;
+  z-index: 0;
+}
+.btnGvgvr:hover {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: 0 -3349px;
+  background-size: 150px auto;
+}
+.btnGvgvr:active {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: 0 -3519px;
+  background-size: 150px auto;
+}
+.btnGvgvr.battleNow {
+  background-repeat: no-repeat;
+  background-position: 0, 0;
+  background-size: 150px, 150px;
+}
+.btnGvgvr.battleNow:hover {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: 0 -3009px;
+  background-size: 150px auto;
+}
+.btnGvgvr.battleNow:hover .btnGvgvrNowAnime {
+  display: none;
+}
+.btnGvgvr.battleNow:active {
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-position: 0 -3179px;
+  background-size: 150px auto;
+}
+.btnGvgvr.battleNow:active .btnGvgvrNowAnime {
+  display: none;
+}
+.btnGvgvr.battleNow .btnGvgvrNowAnime {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: 0, 0;
+  background-size: 150px, 150px;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+.btnGvgvr.battleNow .btnGvgvrNowAnime.animeImg1 {
+  -webkit-animation-name: btnGvr-anime-1;
+          animation-name: btnGvr-anime-1;
+  opacity: 1;
+}
+.btnGvgvr.battleNow .btnGvgvrNowAnime.animeImg2 {
+  -webkit-animation-name: btnGvr-anime-2;
+          animation-name: btnGvr-anime-2;
+  opacity: 0;
+}
+.btnGvgvr.battleNow .btnGvgvrNowAnime.animeImg3 {
+  -webkit-animation-name: btnGvr-anime-3;
+          animation-name: btnGvr-anime-3;
+  opacity: 0;
+}
+
+@-webkit-keyframes btnGvr-anime-1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes btnGvr-anime-1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes btnGvr-anime-2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes btnGvr-anime-2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes btnGvr-anime-3 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes btnGvr-anime-3 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.eventBtn {
+  position: absolute;
+  top: 260px;
+  right: 334px;
+}
+.eventBtn.eventPosition {
+  top: 105px;
+  right: 400px;
+}
+
+.eventBtn .quest_event_drop_count {
+  width: 60px;
+  position: absolute;
+  top: 95px;
+  left: 89px;
+  font-size: 10px;
+  text-align: center;
+  line-height: 1;
+  color: #ff0;
+}
+
+.mypegeBannerArea {
+  width: 326px;
+  height: 328px;
+  background-repeat: no-repeat;
+  background-position: 0 -112px;
+  background-size: 326px auto;
+  position: absolute;
+  left: 40px;
+  bottom: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.mypegeBannerFrame {
+  padding-top: 22px;
+}
+
+#mypageBannerList {
+  width: 116px;
+  height: 34px;
+  background-repeat: no-repeat;
+  background-position: -136px 0;
+  background-size: 326px auto;
+  position: absolute;
+  left: 108px;
+  bottom: 2px;
+  display: block;
+}
+#mypageBannerList:hover {
+  width: 116px;
+  height: 34px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 326px auto;
+}
+
+.flexslider {
+  width: 280px;
+  margin: 0 auto;
+}
+.flexslider:last-child {
+  margin-top: -10px;
+}
+
+.flex-viewport,
+.flexslider .slides > li,
+.flexslider .slides > li a {
+  height: 110px;
+}
+
+.flexslider .slides > li {
+  margin-bottom: 0 !important;
+}
+.flexslider .slides > li a {
+  vertical-align: middle;
+  display: table-cell;
+}
+.flexslider .slides > li .pcMypageHidden {
+  display: none;
+}
+.flexslider .text_link {
+  margin: auto;
+}
+
+.flex-control-nav {
+  margin-top: 2px;
+}
+.flex-control-nav li {
+  margin-top: 7px;
+}
+.flex-control-nav.flex-control-paging {
+  width: 243px;
+  height: 38px;
+  background-repeat: no-repeat;
+  background-position: 0 -54px;
+  background-size: 326px auto;
+  margin-top: -12px;
+}
+
+.flex-control-paging li a {
+  width: 26px;
+  height: 26px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  margin: 0 4px;
+}
+.flex-control-paging li a:hover, .flex-control-paging li a.flex-active {
+  background: none;
+}
+.flex-control-paging li a:after {
+  width: 9px;
+  height: 9px;
+  background: #fff;
+  border-radius: 9px;
+  border: 1px solid #71645a;
+  margin: 2px auto;
+  content: "";
+  display: block;
+}
+.flex-control-paging li a.flex-active:after {
+  background: #37c9ff;
+}
+
+#popup {
+  top: 180px;
+  left: 330px;
+  -webkit-transform: scale3d(1.2, 1.2, 1.2) !important;
+          transform: scale3d(1.2, 1.2, 1.2) !important;
+}
+#popup .border-frame h2 {
+  padding: 0 12px;
+}
+#popup .border-frame .list {
+  width: 284px;
+  background-size: 280px 7px;
+}
+#popup .border-frame .list > li {
+  width: 276px;
+  height: 28px !important;
+  border-bottom: solid 1px #938d6b;
+}
+#popup .border-frame .more a {
+  width: 256px;
+}
+
+#mypageNewsModal {
+  position: absolute;
+  top: 50%;
+  left: 186px;
+  opacity: 0;
+  z-index: 9999;
+  pointer-events: none;
+  transition: opacity 200ms ease-out, -webkit-transform 200ms ease-out;
+  transition: opacity 200ms ease-out, transform 200ms ease-out;
+  -webkit-transform: scale3d(0.9, 0.9, 0.9);
+          transform: scale3d(0.9, 0.9, 0.9);
+}
+#mypageNewsModal.open {
+  opacity: 1;
+  pointer-events: auto;
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+}
+#mypageNewsModal section.frame {
+  width: 568px;
+}
+#mypageNewsModal section.frame h1 {
+  width: 568px;
+  height: 36px;
+  font-size: 16px;
+  line-height: 25px;
+  background-position: 0 0;
+  background-size: 568px 36px;
+}
+#mypageNewsModal section.frame li {
+  width: 270px !important;
+  margin-bottom: 3px !important;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
+}
+#mypageNewsModal section.frame li img {
+  width: 270px !important;
+}
+#mypageNewsModal section.frame li .pcMypageHidden {
+  display: none;
+}
+#mypageNewsModal .btnR {
+  margin: 10px 0;
+  padding: 5px 90px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.text-frame {
+  position: absolute;
+  top: 100px;
+  right: 185px;
+  z-index: 1;
+}
+
+#dummy_time {
+  top: 98px;
+}

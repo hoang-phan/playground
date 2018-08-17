@@ -1,0 +1,963 @@
+window.bossCompleted = true;
+window.comboing = false;
+window.repeat = true;
+window.currentComboFunc = undefined;
+window.usingMystery = false;
+window.mysteryUsed = false;
+window.targetLength = null;
+
+window.skipSkill = function() {
+  if (document.querySelector('#skillSkipBtn').className == 'skillSkipBtn cmdBtn') {
+    document.querySelector('#skillSkipBtn').click();
+    setTimeout(skipBoss, 300);
+  } else {
+    setTimeout(skipSkill, 300);
+  }
+}
+
+window.skipBoss = function() {
+  if (document.querySelector('#bossSkipBtn').className == 'skillSkipBtn cmdBtn') {
+    document.querySelector('#bossSkipBtn').click();
+    bossCompleted = true;
+  } else {
+    setTimeout(skipBoss, 300);
+  }
+}
+
+window.selectSkill = function(holder, element) {
+  var e = holder;
+  e.$el.currentSelectIcon && e.$el.currentSelectIcon.removeClass("skill-select");
+  e.$el.currentSelectIcon = element.addClass("skill-select");
+  e.tappedSkillId === e.$el.currentSelectIcon.data("id") ? (e.removePlaceHolder(), (new Date).getTime() - e.lastIconTapTime < k.doubleTapDuration && (e.removeSelectedSkill(), e.dispatchResetSelected(), e.tappedSkillId = null)) : (e.removePlaceHolder(), e.$el.skillConfirmAlert.text(""), e.updateDetail(), e.tappedSkillId = e.$el.currentSelectIcon.data("id"));
+  e.lastIconTapTime = (new Date).getTime();
+  e.addSelectedSkill();
+  e.tappedSkillId = null;
+}
+
+window.combo = function(holder, ids, startPosition) {
+  var position = startPosition || 'front';
+  var existing = ids.filter(function(id) {
+    return $('#skillIcon_' + position + ' .skillIconImg[style="background-image: url("https://cdn00.drapro-nutaku.dmmgames.com/static//front/img/battle/skillIcon/' + id.toString() + '.png");"]').length == 0
+  }).length == 0;
+  if (existing) {
+    ids.map(function(id) {
+      var el = $('#skillIcon_' + position + ' .skillIconImg[style="background-image: url("https://cdn00.drapro-nutaku.dmmgames.com/static//front/img/battle/skillIcon/' + id.toString() + '.png");"]');
+      selectSkill(holder, $(el[0]).closest('.skillIcon'));
+    });
+    return true;
+  } else {
+    return false;
+  }
+}
+
+window.checkForAllCompleted = function() {
+  setTimeout(function() {
+    if ($('.target:not(.targetBreak):not(.hideVis)').length == 0) {
+      location.href = $('a:contains("to Blaze Crowd HOME")')[0].href;
+    } else {
+      checkForAllCompleted();
+    }
+  }, 5000);
+}
+
+window.firstCombo = function(e) {
+  if ($('#hp').text() == '0') {
+    combo(e, ['3', '1300560', '1300560', '3300930', '3300930']);
+  } else {
+    if (!combo(e, ['3590112', '1300560', '1300560', '3300930', '3300930'])) {
+      combo(e, ['1300850', '1300850', '3300930', '3300930', '1200810'])
+    }
+  }
+}
+
+window.magicCombo = function(e) {
+  if ($('#hp').text() == '0') {
+    combo(e, ['3', '3590112', '3590112', '3500312', '3490110']);
+  } else {
+    combo(e, ['3590112', '3590112', '3590112', '3500312', '3490110']);
+  }
+}
+
+window.cleaveCombo = function(e) {
+  if ($('#hp').text() == '0') {
+    combo(e, ['3', '3590112', '3500312', '1490080', '1490080']);
+  } else {
+    combo(e, ['3590112', '3590112', '3500312', '1490080', '1490080']);
+  }
+}
+
+window.targetCombo = function(e) {
+  if ($('#hp').text() == '0') {
+    combo(e, ['3', '3590112', '3500312', '1490080', '1490080']);
+  } else {
+    combo(e, ['3590112', '3590112', '3500312', '1490080', '1490080']);
+  }
+}
+
+window.boostCombo = function(e) {
+  if ($('#hp').text() == '0') {
+    combo(e, ['3', '2490050', '1390100', '3300970', '3300970'], 'back');
+  } else {
+    combo(e, ['2490050', '1390100', '3300970', '3300970', '3300970'], 'back');
+  }
+}
+
+window.chainCombo1 = function(e) {
+  if ($('#hp').text() == '0') {
+    combo(e, ['3', '3490050', '3490050', '3490050', '3490050'], 'back');
+  } else {
+    combo(e, ['1300850', '3490050', '3490050', '3490050', '3490050'], 'back');
+  }
+}
+
+window.chainCombo2 = function(e) {
+  if ($('#hp').text() == '0') {
+    combo(e, ['3', '3300930', '3300930', '3300930', '3300930'], 'back');
+  } else {
+    combo(e, ['1300850', '3300930', '3300930', '3300930', '3300930'], 'back');
+  }
+}
+
+window.weakCombo = function(e) {
+  combo(e, ['1', '1', '1', '1', '1']);
+}
+
+window.useMystery = function() {
+  if (!mysteryUsed && document.querySelector('#specialBtn').className == 'specialBtn cmdBtn' && $('.subStatusItems:not(".hideDis") .icon.skillIconElement4').length == 0) {
+    document.querySelector('#specialBtn').click();
+    setTimeout(function() {
+      if ($('.specialIcon3').length > 0) {
+        $('.specialIcon3').trigger('tap');
+        $('.specialIcon3').trigger('tap');
+      } else {
+        $('#specialSkillPopUp .closeBtn').click();
+      }
+    }, 300);
+    mysteryUsed = true;
+  }
+}
+
+window.defense = function() {
+  if (document.querySelector('#defenseBtn').className == 'defenseBtn cmdBtn') {
+    document.querySelector('#defenseBtn').click();
+    setTimeout(skipBoss, 300);
+  }
+}
+
+window.clickExecute = function() {
+  if (document.querySelector('#skillExecuteBtn').className == 'skillExecuteBtn') {
+    document.querySelector('#skillExecuteBtn').click();
+    setTimeout(skipSkill, 500);
+  }
+}
+
+window.defenseAction = [
+  function(e) {
+    bossCompleted = false;
+    defense(e);
+  },
+  function() {
+    return bossCompleted && document.querySelector('#defenseBtn').className == 'defenseBtn cmdBtn';
+  }
+  ];
+
+window.callForGuild = function(callback) {
+  $('#rescueBtn').click();
+  setTimeout(function() {
+    $('#guildRescueBtn').trigger('tap');
+    $('#rescuePopUp').removeClass('showDis');
+    if (callback) {
+      callback();
+    }
+  }, 500);
+}
+
+window.executeCombo = function(comboFunc, e) {
+  currentComboFunc = comboFunc;
+
+  if (comboing) {
+    return;
+  }
+
+  comboing = true;
+  actions = [
+    [
+      function() {
+        bossCompleted = false;
+        toggleSkillSelect();
+      },
+      function() {
+        return bossCompleted && document.querySelector('#skillPopUp').className == 'popUpWindow';
+      }
+    ],
+    [
+      currentComboFunc,
+      function() {
+        return document.querySelector('#skillPopUp').className == 'popUpWindow showDis';
+      }
+    ],
+    [
+      clickExecute,
+      function() {
+        return document.querySelector('#skillExecuteBtn').className == 'skillExecuteBtn';
+      }
+    ],
+    defenseAction,
+    defenseAction,
+    [
+      function(e) {
+        if (parseInt($('#sp').text()) < 95) {
+          bossCompleted = false;
+          defense(e);
+        }
+        comboing = false;
+      },
+      function() {
+        return bossCompleted && document.querySelector('#defenseBtn').className == 'defenseBtn cmdBtn';
+      }
+    ]
+  ];
+  if (repeat) {
+    actions.push([
+      function(e) {
+        executeCombo(currentComboFunc, e);
+      },
+      function() { return true; }
+    ]);
+  }
+  if (usingMystery && !mysteryUsed) {
+    useMystery();
+    usingMystery = false;
+    setTimeout(function() {
+      doActionsInSequence(actions, e);
+    }, 300)
+  } else {
+    doActionsInSequence(actions, e);
+  }
+}
+
+window.deathAutoCombo = function(e) {
+  var currentPower = parseInt($('#power').text());
+  var targetLeft = $('.target:not(.hideVis):not(.targetBreak)').length;
+
+  targetLength = targetLength || $('.target').length;
+
+  if (targetLength > 3 && targetLeft > 2 || targetLength == 3 && targetLeft > 2) {
+    if (currentPower < 1900000) {
+      usingMystery = true;
+      $('#targetHitArea > div:nth(3)').trigger('tap');
+      currentComboFunc = firstCombo;
+    } else if (currentPower < 100000000) {
+      usingMystery = true;
+      $('#targetHitArea > div:nth(3)').trigger('tap');
+      currentComboFunc = magicCombo;
+    } else {
+      $('#targetHitArea > div:nth(3)').trigger('tap');
+      currentComboFunc = magicCombo;
+    }
+  } else {
+    $('#targetHitArea > div:nth(4)').trigger('tap');
+    if (currentPower < 10000) {
+      currentComboFunc = cleaveCombo;
+    } else {
+      currentComboFunc = targetCombo;
+    }
+  }
+
+  actions = [
+    [
+      function() {
+        bossCompleted = false;
+        toggleSkillSelect();
+      },
+      function() {
+        return bossCompleted && document.querySelector('#skillPopUp').className == 'popUpWindow';
+      }
+    ],
+    [
+      currentComboFunc,
+      function() {
+        return document.querySelector('#skillPopUp').className == 'popUpWindow showDis';
+      }
+    ],
+    [
+      clickExecute,
+      function() {
+        return document.querySelector('#skillExecuteBtn').className == 'skillExecuteBtn';
+      }
+    ],
+    defenseAction,
+    defenseAction,
+    [
+      function(e) {
+        if (parseInt($('#sp').text()) < 95) {
+          bossCompleted = false;
+          defense(e);
+        }
+      },
+      function() {
+        return bossCompleted && document.querySelector('#defenseBtn').className == 'defenseBtn cmdBtn';
+      }
+    ],
+    [
+      function(e) {
+        deathAutoCombo(e);
+      },
+      function() { return true; }
+    ]
+  ];
+
+  if (usingMystery && !mysteryUsed) {
+    useMystery();
+    usingMystery = false;
+    setTimeout(function() {
+      doActionsInSequence(actions, e);
+    }, 300)
+  } else {
+    doActionsInSequence(actions, e);
+  }
+}
+
+window.boostAutoCombo = function(e) {
+  var currentPower = parseInt($('#power').text());
+
+  var actions = [];
+
+  if (currentPower < 38000000) {
+    actions = [
+      [
+        function() {
+          bossCompleted = false;
+          $('#targetHitArea > div:nth(5)').trigger('tap');
+          toggleSkillSelect();
+        },
+        function() {
+          return bossCompleted && document.querySelector('#skillPopUp').className == 'popUpWindow';
+        }
+      ],
+      [
+        boostCombo,
+        function() {
+          return document.querySelector('#skillPopUp').className == 'popUpWindow showDis';
+        }
+      ],
+      [
+        clickExecute,
+        function() {
+          return document.querySelector('#skillExecuteBtn').className == 'skillExecuteBtn';
+        }
+      ],
+      defenseAction,
+      defenseAction,
+      [
+        function(e) {
+          boostAutoCombo(e);
+        },
+        function() { return true; }
+      ]
+    ]
+  } else {
+    actions = [
+      [
+        function() {
+          bossCompleted = false;
+          toggleSkillSelect();
+        },
+        function() {
+          return bossCompleted && document.querySelector('#skillPopUp').className == 'popUpWindow';
+        }
+      ],
+      [
+        chainCombo1,
+        function() {
+          return document.querySelector('#skillPopUp').className == 'popUpWindow showDis';
+        }
+      ],
+      [
+        clickExecute,
+        function() {
+          return document.querySelector('#skillExecuteBtn').className == 'skillExecuteBtn';
+        }
+      ],
+      [
+        function() {
+          bossCompleted = false;
+          toggleSkillSelect();
+        },
+        function() {
+          return bossCompleted && document.querySelector('#skillPopUp').className == 'popUpWindow';
+        }
+      ],
+      [
+        chainCombo2,
+        function() {
+          return document.querySelector('#skillPopUp').className == 'popUpWindow showDis';
+        }
+      ],
+      [
+        clickExecute,
+        function() {
+          return document.querySelector('#skillExecuteBtn').className == 'skillExecuteBtn';
+        }
+      ],
+      defenseAction,
+      [
+        function(e) {
+          boostAutoCombo(e);
+        },
+        function() { return true; }
+      ]
+    ]
+  }
+
+  doActionsInSequence(actions, e);
+}
+
+window.toggleSkillSelect = function() {
+  var popup = document.querySelector('#skillPopUp');
+  if (popup.className == 'popUpWindow') {
+    document.querySelector('#skillBtn').click();
+  } else {
+    document.querySelector('#skillPopUp .closeBtn').click();
+  }
+}
+
+window.doActionsInSequence = function(actions, e) {
+  element = actions[0]
+  if (!element) {
+    return;
+  } 
+  action = element[0];
+  conditionFunc = element[1];
+  if (conditionFunc(e)) {
+    action(e);
+    actions.shift();
+    doActionsInSequence(actions, e);
+  } else {
+    setTimeout(function() {
+      doActionsInSequence(actions, e);
+    }, 200);
+  }
+}
+
+define(["lib/loader", "lib/soundManager", "config/battleConfig", "view/blaze/module/player", "view/blaze/module/boss", "view/blaze/module/cutin", "view/blaze/module/popup", "view/blaze/module/header", "view/blaze/module/resque", "view/blaze/module/subStatus", "view/blaze/module/data", "view/blaze/module/status", "view/blaze/module/position", "view/blaze/module/gameManager", "view/blaze/module/marquee", "view/blaze/module/combo", "view/blaze/module/chat", "view/blaze/module/battleLog", "view/blaze/module/util"], function(e, t, l, i, s, a, n, r, o, c, d, h, u, k, p, m, f, S, g) {
+    var v = {
+        $el: {},
+        isAjaxExecuting: !1,
+        isSkipFlg: !1,
+        skipDamageSum: 0,
+        isAlreadyArcana: !1,
+        enableSkillList: {},
+        autoSkillList: [],
+        idBaseSkillList: [],
+        use_sp: 0,
+        isAlreadyCureFlg: !1,
+        lastIconTapTime: 0,
+        tappedSkillId: null,
+        maxSelectedSkillNum: 5,
+        maxIconNumPerPage: 10,
+        currentPanelPage: 1,
+        maxPanelPage: 1,
+        placeHolderId: "selected_placeHolder",
+        initSkill: function() {
+            this.$el.selectedSkill = $("#dummy_skill_id_list"), this.$el.selectedType = $("#dummy_skill_type_list"), this.$el.skillExecuteBtn = $("#skillExecuteBtn"), this.$el.skillPopUp = $("#skillPopUp"), this.setSkillExec(), this.enableSkillList = Game.parameter.skill, this.autoSkillList = Game.parameter.autoSkillList, Game.parameter.skill = void 0, Game.parameter.autoSkillList = void 0, this.$el.skillIconF = $("#skillIconF"), this.$el.skillIconTpl = $("#skillIconTpl"), this.skillIconHtmlTpl = this.$el.skillIconTpl.html(), this.$el.skillTabWrap = $("#skillTabWrap"), this.$el.skillTabs = this.$el.skillTabWrap.children(".tab"), this.$el.skillPagerL = $("#skillPagerL"), this.$el.skillPagerR = $("#skillPagerR"), this.$el.skillPagerBunsi = $("#skillPagerDenominator"), this.$el.skillPagerBunbo = $("#skillPagerMolecule"), this.$el.skillIconSelected = $("#skillIconSelected"), this.$el.skillConfirmSkillName = $("#skillConfirmSkillName"), this.$el.skillConfirmKind = $("#skillConfirmKind"), this.$el.skillConfirmDescription = $("#skillConfirmDescription"), this.$el.skillConfirmSpF = $("#skillConfirmSpF"), this.$el.skillConfirmRemainCount = $("#skillConfirmRemainCount"), this.$el.skillConfirmAlert = $("#skillConfirmAlert"), this.$el.setSpBar = $("#setSpBar"), this.$el.setSpBarRemain = $("#setSpBarRemain"), this.$el.spPlayerNum = $("#spPlayerNum"), this.$el.spUsedNumWrp = $("#spUsedNumWrp"), this.$el.spUsedNum = $("#spUsedNum"), this.$el.spPlayerMaxNum = $("#spPlayerMaxNum"), this.$el.skillAutoSetBtn = $("#skillAutoSetBtn"), this.$el.skillAllRemoveBtn = $("#skillAllRemoveBtn"), this.$el.currentPanelPage, this.setSkillPanelTab(), this.setSkillPanelPager(), this.setSelectIconTap(), this.setAlreadySelectedIconTap(), this.setSkillAllRemove(), this.setAutoSkill(), this.generatePanelIcons(), this.$el.skillBtn = $("#skillBtn"), this.$el.skillBtn.on("click.skill", function() {
+                this.removePlaceHolder(), this.excludePosSkill(), this.initSkillPanelTab(), this.changeTabText(), this.changeSkillAutoSetBtn()
+            }.bind(this)), this.$el.skillSkipBtn = $("#skillSkipBtn"), this.$el.skillSkipBtn.on("click.skipaction", function() {
+                this.skipAction()
+            }.bind(this)), this.$el.bossSkipBtn = $("#bossSkipBtn"), this.$el.bossSkipBtn.on("click.skipboss", function() {
+                this.skipBoss()
+            }.bind(this)), this.$el.defenseBtn = $("#defenseBtn"), this.$el.defenseBtn.on("click.defense", function() {
+                this.$el.skillAllRemoveBtn.trigger("tap"), this.$el.skillExecuteBtn.trigger("click")
+            }.bind(this))
+        },
+        generatePanelIcons: function() {
+            var e, t, i, s, a, n, r = 1,
+                o = 0,
+                c = "";
+            for (this.idBaseSkillList = void 0, this.idBaseSkillList = []; r <= 6;) {
+                for (i = l.cmdType["" + r].pos, s = l.cmdType["" + r].type.toLowerCase(), $("#skillIcon" + r).find(".skillTypeInner").remove(), o = 0, c = "", e = 0, t = this.enableSkillList[i][s].length; e < t; e++) a = this.enableSkillList[i][s][e], n = g.getElemNum(a.element), e % this.maxIconNumPerPage === 0 && (o += 1, c = "skillPager_" + r + "_" + o, $("#skillIcon" + r).append('<div id="' + c + '" class="skillTypeInner"></div>')), a.sp = parseInt(a.sp, 10), this.idBaseSkillList[a.id] = a, $("#" + c).append($(this.skillIconHtmlTpl).attr("id", "userskill_" + a.id).data("id", a.id).data("skill_id", a.skill_id).data("skillType", a.skillType).addClass("useAlways" + a.useAlways).find(".skillIconImg").css("background-image", "url(" + l.skillIconImgPath + a.card_id + ".png)").end().find(".skillIconElement").addClass("skillIconElement" + n).end().find(".skillSp").addClass("skillSp" + a.sp).end());
+                r++
+            }
+        },
+        excludePosSkill: function() {
+            this.$el.skillIconF.children(".skillIconPos").addClass("hideDis"), $("#skillIcon_" + i.position).removeClass("hideDis")
+        },
+        initSkillPanelTab: function() {
+            this.$el.skillTabs.eq(0).trigger("tap")
+        },
+        changeTabText: function() {
+            "front" === i.position ? (this.$el.skillTabs.eq(0).text("Attack"), this.$el.skillTabs.eq(1).text("Magic"), this.$el.skillTabs.eq(2).text("Heal")) : (this.$el.skillTabs.eq(0).text("Attack"), this.$el.skillTabs.eq(1).text("Magic"), this.$el.skillTabs.eq(2).text("Support"))
+        },
+        changeSkillAutoSetBtn: function() {
+            i.hp > 0 ? this.$el.skillAutoSetBtn.removeClass("off") : this.$el.skillAutoSetBtn.addClass("off")
+        },
+        setSkillPanelTab: function() {
+          var e = this;
+
+          document.onkeyup = function(x) {
+            switch (x.key) {
+              case 's':
+                toggleSkillSelect();
+                break;
+              case 'a':
+                clickExecute();
+                break;
+              case 'd':
+                defense();
+                break;
+              case 'm':
+                if (repeat) {
+                  usingMystery = true;
+                } else {
+                  useMystery();
+                }
+                break;
+              case 'q':
+                executeCombo(firstCombo, e);
+                break;
+              case 'w':
+                executeCombo(magicCombo, e)
+              break;
+              case 'e':
+                executeCombo(cleaveCombo, e)
+              break;
+              case 'r':
+                executeCombo(targetCombo, e)
+              break;
+              case 'u':
+                repeat = true;
+                deathAutoCombo(e);
+              break;
+              case 'n':
+                repeat = !repeat;
+              break;
+              case '1':
+              case '2':
+              case '3':
+              case '4':
+              case '5':
+                $('.target' + x.key + 'HitArea').trigger('tap');
+              break;
+            }
+          };
+
+          if (localStorage.getItem('autoBlazeCrowd') == 't' ||
+              localStorage.getItem('acceptReinforcementBlazeCrowd') == 't' ||
+              localStorage.getItem('acceptNewReinforcementBlazeCrowd') == 't' ||
+              localStorage.getItem('boostBlazeCrowd') == 't') {
+            setTimeout(function() {
+              repeat = true;
+              if (localStorage.getItem('acceptReinforcementBlazeCrowd') == 't') {
+                deathAutoCombo(e);
+                setTimeout(function() {
+                  checkForAllCompleted();
+                }, 5000);
+              } else if (localStorage.getItem('boostBlazeCrowd') == 't') {
+                if ($(window).width() > 600) {
+                  deathAutoCombo(e);
+                } else if ($(window).height() > 1000) {
+                  callForGuild(function() {
+                    boostAutoCombo(e);
+                  });
+                } else {
+                  boostAutoCombo(e);
+                }
+                setTimeout(function() {
+                  checkForAllCompleted();
+                }, 5000);
+              } else if (localStorage.getItem('acceptNewReinforcementBlazeCrowd') == 't') {
+                repeat = false;
+                executeCombo(firstCombo, e);
+              } else {
+                if ($(window).height() > 1000) {
+                  deathAutoCombo(e);
+                } else {
+                  callForGuild(function() {
+                    deathAutoCombo(e);
+                  });
+                }
+                setTimeout(function() {
+                  checkForAllCompleted();
+                }, 5000);
+              }
+            }, 500);
+          } else if (localStorage.getItem('feedForBlazeCrowd') == 't') {
+            callForGuild(function() {
+              boostAutoCombo(e);
+              setTimeout(function() {
+                checkForAllCompleted();
+              }, 10000);
+            });
+          }
+
+          this.$el.skillTabs.hammer().on("tap", function() {
+            e.changePanelByTab($(this))
+          })
+        },
+        changePanelByTab: function(e) {
+            this.$el.skillIconF.find(".skillType").addClass("hideDis");
+            var t = $("#skillIcon_" + i.position).children(".skillType_" + e.data("type"));
+            t.removeClass("hideDis"), this.$el.skillTabs.removeClass("on"), e.addClass("on");
+            var l = t.children(".skillTypeInner"),
+                s = l.size();
+            1 === s ? (this.$el.skillPagerL.addClass("off"), this.$el.skillPagerR.addClass("off"), this.$el.skillPagerBunsi.text("1"), this.$el.skillPagerBunbo.text("1")) : (this.$el.skillPagerL.removeClass("off"), this.$el.skillPagerR.removeClass("off"), this.$el.skillPagerBunsi.text("1"), this.$el.skillPagerBunbo.text("" + s), this.$el.currentPanelPage = t.children(".skillTypeInner").addClass("hideDis").eq(0).removeClass("hideDis"), this.currentPanelPage = 1, this.maxPanelPage = s), this.validateSkillIcons()
+        },
+        setSkillPanelPager: function() {
+            this.$el.skillPagerL.hammer().on("tap", function() {
+                1 === this.currentPanelPage ? this.currentPanelPage = this.maxPanelPage : this.currentPanelPage--, this.$el.currentPanelPage.closest(".skillType").children(".skillTypeInner").addClass("hideDis").eq(this.currentPanelPage - 1).removeClass("hideDis"), this.$el.skillPagerBunsi.text("" + this.currentPanelPage)
+            }.bind(this)), this.$el.skillPagerR.hammer().on("tap", function() {
+                this.currentPanelPage == this.maxPanelPage ? this.currentPanelPage = 1 : this.currentPanelPage++, this.$el.currentPanelPage.closest(".skillType").children(".skillTypeInner").addClass("hideDis").eq(this.currentPanelPage - 1).removeClass("hideDis"), this.$el.skillPagerBunsi.text("" + this.currentPanelPage)
+            }.bind(this))
+        },
+        setSelectIconTap: function() {
+            var e = this;
+            this.$el.skillIconF.hammer().on("tap.select", ".skillIcon", function() {
+                e.$el.currentSelectIcon && e.$el.currentSelectIcon.removeClass("skill-select"), e.$el.currentSelectIcon = $(this).addClass("skill-select"), e.tappedSkillId === e.$el.currentSelectIcon.data("id") ? (new Date).getTime() - e.lastIconTapTime < k.doubleTapDuration && (e.removePlaceHolder(), e.addSelectedSkill(), e.tappedSkillId = null) : (e.$el.skillConfirmAlert.text(""), e.updateDetail(), e.tappedSkillId = e.$el.currentSelectIcon.data("id"), e.$el.skillIconSelected.children(".skillIcon").size() < e.maxSelectedSkillNum && (e.removePlaceHolder(), e.addPlaceHolder())), e.lastIconTapTime = (new Date).getTime()
+            })
+        },
+        removePlaceHolder: function() {
+            $("#" + this.placeHolderId).size() > 0 && $("#" + this.placeHolderId).remove()
+        },
+        addPlaceHolder: function() {
+            this.$el.currentSelectIcon.hasClass("off") || this.$el.skillIconSelected.append(this.$el.currentSelectIcon.clone(!0).removeClass("skill-select").addClass("placeHolder").attr("id", this.placeHolderId))
+        },
+        setAlreadySelectedIconTap: function() {
+            var e = this;
+            this.$el.skillIconSelected.hammer().on("tap.selected", ".skillIcon:not(.placeHolder)", function() {
+                e.$el.currentSelectIcon && e.$el.currentSelectIcon.removeClass("skill-select"), e.$el.currentSelectIcon = $(this).addClass("skill-select"), e.tappedSkillId === e.$el.currentSelectIcon.data("id") ? (e.removePlaceHolder(), (new Date).getTime() - e.lastIconTapTime < k.doubleTapDuration && (e.removeSelectedSkill(), e.dispatchResetSelected(), e.tappedSkillId = null)) : (e.removePlaceHolder(), e.$el.skillConfirmAlert.text(""), e.updateDetail(), e.tappedSkillId = e.$el.currentSelectIcon.data("id")), e.lastIconTapTime = (new Date).getTime()
+            })
+        },
+        updateSpState: function() {
+            this.$el.spPlayerMaxNum.text(i.spMax), this.$el.spPlayerNum.text(i.sp), this.$el.spUsedNum.text(this.use_sp), 0 === this.use_sp ? this.$el.spUsedNumWrp.addClass("hideDis") : this.$el.spUsedNumWrp.removeClass("hideDis"), this.$el.setSpBar.css("width", h.calcBarWidth(i.sp, i.spMax)), this.$el.setSpBarRemain.css("width", h.calcUseBarWidth(i.sp, i.spMax, this.use_sp))
+        },
+        updateDetail: function() {
+            if (void 0 !== this.$el.currentSelectIcon) {
+                var e = this.idBaseSkillList[this.$el.currentSelectIcon.data("id")];
+                this.$el.skillConfirmSkillName.html(e.name), this.$el.skillConfirmDescription.text(e.comment), this.$el.skillConfirmSpF.text(e.sp), this.$el.skillConfirmRemainCount.text(e.remainCount);
+                for (var t = "" + e.effect, l = t.split(","), i = "", s = 0, a = l.length; s < a; s++) i += "<span>" + l[s] + "</span>";
+                this.$el.skillConfirmKind.empty().html(i)
+            }
+        },
+        clearDetail: function() {
+            this.$el.skillConfirmSkillName.text(""), this.$el.skillConfirmDescription.text(""), this.$el.skillConfirmSpF.text(""), this.$el.skillConfirmRemainCount.text(""), this.$el.skillConfirmKind.empty(), this.$el.skillConfirmAlert.text("")
+        },
+        addSelectedSkill: function() {
+            var e = this.idBaseSkillList[this.$el.currentSelectIcon.data("id")];
+            if (this.$el.skillIconSelected.children(".skillIcon").size() >= this.maxSelectedSkillNum) return void this.$el.skillConfirmAlert.text("Skill usage depleted.");
+            var t = this.isCanUseSkill(e);
+            return t !== !0 ? void this.$el.skillConfirmAlert.text(t) : (this.$el.skillIconSelected.append(this.$el.currentSelectIcon.clone(!0).removeClass("skill-select").addClass("selected").data("id", this.$el.currentSelectIcon.data("id")).attr("id", "selected_" + this.$el.currentSelectIcon.attr("id"))), this.idBaseSkillList[this.$el.currentSelectIcon.data("id")].remainCount--, this.use_sp += e.sp, this.updateDetail(), this.updateSpState(), this.hideAutoSkillBtn(), this.checkAlreadyCureSkillSelected(), void this.validateSkillIcons())
+        },
+        checkAlreadyCureSkillSelected: function() {
+            this.$el.skillIconSelected.children(".useAlways2").size() > 0 ? this.isAlreadyCureFlg = !0 : this.isAlreadyCureFlg = !1
+        },
+        dispatchResetSelected: function() {
+            i.hp <= 0 && this.isAlreadyCureFlg === !1 && this.resetSelectedSkill()
+        },
+        isCanUseSkill: function(e) {
+            if (e.remainCount <= 0) return "0 skill usage left";
+            if (i.sp - this.use_sp - e.sp < 0) return "Insufficient SP";
+            if (0 == e.useAlways) {
+                if (i.hp <= 0 && 3 != e.use_condition && !this.isAlreadyCureFlg) return "Can't use when down";
+                if (i.hp > 0 && 3 == e.use_condition || i.hp <= 0 && 3 == e.use_condition && this.isAlreadyCureFlg) return "Can be used only when down"
+            }
+            return !0
+        },
+        removeSelectedSkill: function() {
+            var e = this.$el.currentSelectIcon.data("id");
+            this.idBaseSkillList[e].remainCount++, this.use_sp -= this.idBaseSkillList[e].sp, this.updateDetail(), this.$el.currentSelectIcon.remove(), this.$el.currentSelectIcon = null, this.updateSpState(), this.use_sp <= 0 && this.showAutoSkillBtn(), this.checkAlreadyCureSkillSelected(), this.validateSkillIcons()
+        },
+        validateSkillIcons: function() {
+            var e, t, l;
+            e = i.position, t = this.$el.skillTabWrap.children(".on").eq(0).data("type");
+            for (var s = 0, a = this.enableSkillList[e][t].length; s < a; s++) l = this.enableSkillList[e][t][s], this.isCanUseSkill(l) !== !0 ? $("#userskill_" + l.id).addClass("off") : $("#userskill_" + l.id).removeClass("off")
+        },
+        resetSelectedSkill: function() {
+            var e = this;
+            this.$el.currentSelectIcon && this.$el.currentSelectIcon.removeClass("skill-select"), this.$el.skillIconSelected.children(".skillIcon").each(function() {
+                e.$el.currentSelectIcon = $(this), e.removeSelectedSkill()
+            })
+        },
+        destroySelectedSkill: function() {
+            this.$el.skillIconSelected.empty(), this.use_sp = 0
+        },
+        hideAutoSkillBtn: function() {
+            this.$el.skillAutoSetBtn.addClass("hideDis"), this.$el.skillAllRemoveBtn.removeClass("hideDis"), this.$el.skillExecuteBtn.removeClass("off")
+        },
+        showAutoSkillBtn: function() {
+            this.$el.skillAutoSetBtn.removeClass("hideDis"), this.$el.skillAllRemoveBtn.addClass("hideDis"), this.$el.skillExecuteBtn.addClass("off")
+        },
+        setSkillAllRemove: function() {
+            this.$el.skillAllRemoveBtn.hammer().on("tap", function() {
+                this.removePlaceHolder(), this.resetSelectedSkill()
+            }.bind(this))
+        },
+        setAutoSkill: function() {
+            this.$el.skillAutoSetBtn.hammer().on("tap", function() {
+                var e = this,
+                    t = i.position,
+                    l = $("#skillIcon_" + t);
+                this.removePlaceHolder(), e.$el.currentSelectIcon && e.$el.currentSelectIcon.removeClass("skill-select");
+                for (var s = 0, a = this.autoSkillList.length; s < a; s++) l.find(".skillIcon").each(function() {
+                    var t = $(this);
+                    if (t.data("skill_id") == e.autoSkillList[s]) return e.$el.currentSelectIcon = $("#userskill_" + t.data("id")), void e.addSelectedSkill()
+                })
+            }.bind(this))
+        },
+        updateAutoSkillList: function(e) {
+            void 0 !== e && (this.autoSkillList = e)
+        },
+        resetEnableSkillList: function(e) {
+            this.enableSkillList.front.attack = e[1], this.enableSkillList.front.magic = e[2], this.enableSkillList.front.other = e[3], this.enableSkillList.back.attack = e[4], this.enableSkillList.back.magic = e[5], this.enableSkillList.back.other = e[6]
+        },
+        setSkillExec: function() {
+            this.$el.skillExecuteBtn.on("click", function() {
+                var e = this,
+                    t = new $.Deferred;
+                if (this.isAjaxExecuting !== !0) {
+                    e.removePlaceHolder();
+                    var l = [],
+                        a = [];
+                    this.$el.skillIconSelected.children(".skillIcon").each(function() {
+                        var e = $(this);
+                        l.push(e.data("id")), a.push(e.data("skillType"))
+                    }), n.hideModal();
+                    var o = {};
+                    if (o.blaze_user_skill_id = l, o.skill_type = a, o.blaze_battle_id = Game.parameter.battleId, !o.blaze_user_skill_id) return;
+                    if (!o.skill_type) return;
+                    var c = s.currentTarget.id;
+                    c !== !1 && (o.target_blaze_boss_parts_id = c.match(/\d+/)[0]), void 0 !== Game.parameter.playerPosition ? o.formation = Game.parameter.playerPosition : o.formation = i.position, S.unlockBtn(), k.disableBtn(), k.disableTarget(), this.isAjaxExecuting = !0, r.offReloadBtn(), $.ajax({
+                        url: Game.parameter.url.actionURL,
+                        type: "POST",
+                        dataType: "json",
+                        cache: !1,
+                        data: o
+                    }).success(function(l) {
+                        if (l && l.status_result)
+                            if (e.latestActionRes = l, e.latestActionParam = o, k.isSimple === !0) e.isEnableBossAttackAfter = !0, $("#simple_boss_slash").addClass("simple_boss_slash").on(ANIMATION_END, function() {
+                                $(this).removeClass("simple_boss_slash")
+                            }), e.skipAction();
+                            else {
+                                if (e.isSkipFlg = !1, s.isSkipFlg = !1, void 0 !== l.result.specialSkill) {
+                                    var a = require("view/blaze/module/specialSkill");
+                                    a.updateCurrentSpecialSkill(l.result.specialSkill)
+                                }
+                                e.isEnableBossAttackAfter = !0;
+                                var c = Object.keys(l.result.effect).length;
+                                if (0 !== c) {
+                                    var d = l.result.effect[c - 1].player_status.sp;
+                                    i.updatePlayerStatus({
+                                        sp: d
+                                    })
+                                }
+                                void 0 !== l.remainTime && (r.remainTime = l.remainTime, r.showRemainTimeForce()), e.clearCue(), l.result.effect && e.parseUserActionToCue(l.result.effect, o), e.$el.skillBtn.addClass("hideDis"), e.$el.skillSkipBtn.removeClass("hideDis"), e.runSkillCue()
+                            }
+                        else e.isAjaxExecuting = !1, r.onReloadBtn(), k.enableBtn(), k.enableTarget(), n.showErrorPopup(), t.resolve()
+                    }).error(function(l, i, s) {
+                        e.isAjaxExecuting = !1, r.onReloadBtn(), k.enableBtn(), k.enableTarget(), n.showErrorPopup(), t.resolve()
+                    })
+                } else t.resolve();
+                return t.promise()
+            }.bind(this))
+        },
+        userAction: function(e) {
+            var t = this,
+                l = new $.Deferred;
+            return t.actionPreload(e).then(function() {
+                return t.actionInitialize(e)
+            }).then(function() {
+                return t.actionMain(e)
+            }).then(function() {
+                return t.actionFinalize(e)
+            }).then(function() {
+                l.resolve()
+            }), l.promise()
+        },
+        actionPreload: function(t) {
+            var l = [];
+            return t.seName = {}, t.instanceName = [], $.each(t.manifest, function(i, s) {
+                var a = new $.Deferred;
+                e.loadEffectManifest(s).then(function(e, l) {
+                    t.instanceName.push(e), t.seName[e] = l, a.resolve()
+                }), l.push(a.promise())
+            }), $.when.apply(this, l)
+        },
+        actionInitialize: function(e) {
+            var t = new $.Deferred;
+            return t.resolve(), t.promise()
+        },
+        actionMain: function(e) {
+            var t = this,
+                l = new $.Deferred;
+            switch (t.isSkipFlg && l.resolve(), e.cmd) {
+                case "heal":
+                    t.showMotion(e).then(function() {
+                        return !t.isSkipFlg && t.showEffect(e, !1)
+                    }).then(function() {
+                        return !t.isSkipFlg && ("object" == typeof e.recover ? $.each(e.recover, function(e, t) {
+                            i.updatePlayerStatus(t)
+                        }) : i.updatePlayerStatus(e.recover), i.showIdl(), void l.resolve())
+                    });
+                    break;
+                case "cheer":
+                    t.showMotion(e).then(function() {
+                        return !t.isSkipFlg && t.showEffect(e, !1)
+                    }).then(function() {
+                        return !t.isSkipFlg && void l.resolve()
+                    });
+                    break;
+                case "simple":
+                    e.motion = this.convertToGeneralMotion(e.motion, e.skillId), t.showMotion(e).then(function() {
+                        return !t.isSkipFlg && t.showEffect(e, !1)
+                    }).then(function() {
+                        return !t.isSkipFlg && $.when(s.showEnemyDamageMotion(e.damage), s.receiveDamage(e.damage))
+                    }).then(function() {
+                        return !t.isSkipFlg && s.breakPartsMotion(e["break"], e)
+                    }).then(function() {
+                        return !t.isSkipFlg && void l.resolve()
+                    })
+            }
+            return l.promise()
+        },
+        actionFinalize: function(e) {
+            var t = new $.Deferred;
+            return i.showIdl(), s.showIdl(), void 0 !== e && void 0 !== e.combo && m.updateCombo(e.combo, e.comboType), i.dispatchNoEffect(e), s.dispatchNoEffect(e), t.resolve(), t.promise()
+        },
+        showMotion: function(e) {
+            var t = new $.Deferred;
+            return "arcana" === e.motion && this.isAlreadyArcana ? t.resolve() : i.get("hp") > 0 ? i.render(e.motion).instance.addEventListener("complete", function() {
+                i.instance.removeEventListener("complete", arguments.callee), t.resolve()
+            }) : t.resolve(), "arcana" === e.motion && (this.isAlreadyArcana = !0), t.promise()
+        },
+        convertToGeneralMotion: function(e, t) {
+            switch (t) {
+                case "1":
+                    e = "attack";
+                    break;
+                case "2":
+                    e = "magic"
+            }
+            return e
+        },
+        showEffect: function(e, l) {
+            var i = [];
+            return $.each(e.instanceName, function(s, a) {
+                var n = !1;
+                a.indexOf("summon") < 0 && l && (n = !0);
+                var r = new $.Deferred;
+                i.push(r.promise());
+                var o = effect[a];
+                o.x = 0, o.y = 0, o.addEventListener("complete", function() {
+                    stage.removeChild(o), r.resolve()
+                }), n ? setTimeout(function() {
+                    stage.addChild(o), t.start(e.seName[a], !0, 1, !1)
+                }, 1e3) : (t.start(e.seName[a], !0, 1, !1), stage.addChild(o))
+            }), $.when.apply(this, i)
+        },
+        skipAction: function() {
+            this.isSkipFlg = !0;
+            var e = this;
+            e.$el.skillSkipBtn.addClass("off"), i.rewindInstanceTween(), k.wait(0).then(function() {
+                if (e.latestActionRes.result.damage) {
+                    var t = e.concatResultDamage();
+                    return Object.keys(t).length > 0 && (s.showEnemyDamageMotion(t), s.receiveDamage(t)), k.wait(300)
+                }
+                return k.wait(0)
+            }).then(function() {
+                return e.latestActionRes.result["break"] && e.latestActionRes.result["break"].length > 0 && k.isSimple !== !0 ? e.latestActionRes.result["break"][0] && 0 == e.latestActionRes.result["break"][0].length ? k.wait(0) : (s.breakPartsMotion(e.latestActionRes.result["break"], e.latestActionRes), k.wait(1200)) : k.wait(0)
+            }).then(function() {
+                return e.actionFinalize({})
+            }).then(function() {
+                return e.skipFinalize()
+            }).then(function() {
+                e.skillCueEnd()
+            })
+        },
+        concatResultDamage: function() {
+            this.skipDamageSum = 0;
+            for (var e, t = {}, l = $.extend(!0, {}, s.model_target), i = 0, a = this.latestActionRes.result.damage.length; i < a; i++) e = this.latestActionRes.result.damage[i], void 0 !== e.num && (num = parseInt(e.num, 10), targetId = e.target.id, l[targetId] && l[targetId].hp != e.target.hp && (l[targetId].hp != e.target.hp, void 0 === t[targetId] && (t[targetId] = {}, t[targetId].num = 0, t[targetId].element = "normal", t[targetId].isWeak = !1, t[targetId].isStrong = !1, t[targetId].isCritical = !1), t[targetId].target = e.target, t[targetId].num += num, this.skipDamageSum += num));
+            return t
+        },
+        skipFinalize: function() {
+            var e = new $.Deferred;
+            return this.latestActionRes && this.latestActionRes.result && this.latestActionRes.result.damage ? (0 !== this.skipDamageSum && (p.updateMarquee(this.skipDamageSum + " total damage to " + s.currentTarget["default"] + " !"), this.skipDamageSum = 0), k.wait(1e3).then(function() {
+                e.resolve()
+            })) : e.resolve(), this.latestActionRes && this.latestActionRes.result && this.latestActionRes.result.effect && $.each(this.latestActionRes.result.effect, function(e, t) {
+                t.recover && ("object" == typeof t.recover ? $.each(t.recover, function(e, t) {
+                    i.updatePlayerStatus(t)
+                }) : i.updatePlayerStatus(t.recover))
+            }), e.promise()
+        },
+        parseUserActionToCue: function(e, t) {
+            for (var l = 0, i = e.length; l < i; l++) e[l].skill_id = t.blaze_user_skill_id[l], e[l].skill_type = t.skill_type[l], e[l].funcName = "userAction", this.addCue(e[l])
+        },
+        runSkillCue: function() {
+            if (this.getSizeCue() > 0) {
+                var e = this,
+                    t = this.__a.shift();
+                this.isSkipFlg || this[t.funcName].apply(this, [t]).then(function() {
+                    setTimeout(function() {
+                        e.runSkillCue()
+                    }, 0)
+                })
+            } else this.isSkipFlg || this.skillCueEnd()
+        },
+        skillCueEnd: function() {
+            var e = this;
+            e.latestActionRes.dead ? (r.offReloadBtn(), e.$el.skillSkipBtn.addClass("off"), s.dead().then(function() {
+                $("#tapScreen").addClass("bossDead"), k.battleFinish()
+            })) : k.isSimple === !0 ? (e.afterPlayerActions(), s.bossAttackCutin(e.latestActionRes).then(function() {
+                return p.updateMarquee(e.latestActionRes.result.bossAttack.attackName), i.render("damage"), $("#simple_player_slash").addClass("simple_player_slash").on(ANIMATION_END, function() {
+                    $(this).removeClass("simple_player_slash")
+                }), k.wait(200)
+            }).then(function() {
+                i.renderDamageAndHeal(e.latestActionRes.result.bossAttack.playerDamage, !0), e.bossAttackAfter()
+            })) : (e.$el.skillSkipBtn.addClass("off"), e.afterPlayerActions(), e.$el.skillBtn.addClass("hideDis"), e.$el.skillSkipBtn.addClass("hideDis").removeClass("off"), e.$el.bossSkipBtn.removeClass("hideDis"), k.wait(500).then(function() {
+                return s.bossAttack(e.latestActionRes)
+            }).then(function() {
+                e.bossAttackAfter()
+            }))
+        },
+        afterPlayerActions: function() {
+            if (this.latestActionRes.blaze_boss_param) {
+                var e = [];
+                $.each(this.latestActionRes.blaze_boss_param, function(t, l) {
+                    0 != parseInt(l.hp, 10) || s.model_target["target" + t].isBreaked || e.push("target" + t), s.model_target["target" + t].powerDown = l.powerDown, s.model_target["target" + t].hp = l.hp, s.model_target["target" + t].render(), l.isPowerDownCap && s.showPowerDownCapIcon("target" + t)
+                });
+                var t = this;
+                $.each(s.model_target, function(l, i) {
+                    if (!i.isBreaked) {
+                        var a = !1;
+                        $.each(t.latestActionRes.blaze_boss_param, function(e, t) {
+                            l == "target" + e && (a = !0)
+                        }), a === !1 && (e.push(l), s.model_target[l].hp = 0, s.model_target[l].render())
+                    }
+                }), e.length > 0 && s.breakPartsMotion(e, {}).then(function() {
+                    s.showIdl()
+                })
+            }
+        },
+        turnFinalize: function(e) {
+            k.enableBtn(), k.enableTarget(), void 0 !== e.valor && c.updateRewardDeed(e.valor), void 0 !== e.beforeBattleLog && d.updateLog(e.beforeBattleLog), void 0 !== e.turn && r.updateTurnNumDisp(e.turn), void 0 !== e.entry && (r.updateJoinPlayerNumDisp(e.entry), r.isMaxEntryNum() ? o.disableResque() : o.enableResque()), e.isSkillCharge === !0 && k.showNotice("Skill usage replenished."), this.isAlreadyCureFlg = !1, this.isAlreadyArcana = !1
+        },
+        bossAttackAfter: function() {
+            this.isEnableBossAttackAfter === !0 && (this.isEnableBossAttackAfter = !1, i.updatePlayerStatus(this.latestActionRes.playerStatus), i.showIdl(), this.turnFinalize(this.latestActionRes), u.resetBtnState(i.position), this.destroySelectedSkill(), this.showAutoSkillBtn(), this.resetEnableSkillList(this.latestActionRes.skillList), this.updateAutoSkillList(this.latestActionRes.result.autoSkillList), this.clearDetail(), this.updateSpState(), this.generatePanelIcons(), this.isAjaxExecuting = !1, r.onReloadBtn(), f.updateUnreadIconView(this.latestActionRes.chatlog_max_entry, f.chatlogAlreadyRead)), this.$el.skillSkipBtn.addClass("hideDis"), this.$el.bossSkipBtn.addClass("hideDis"), this.$el.skillBtn.removeClass("hideDis")
+        },
+        skipBoss: function() {
+            s.isSkipFlg = !0, a.hideTimer();
+            var e = stage.getChildIndex(s.instance);
+            stage.removeChild(s.instance), stage.addChildAt(s.instance = new lib[s.instanceName], e), i.render("damage");
+            for (var t = 0, l = s.breakPartsList.length; t < l; t++) s.breakParts(s.breakPartsList[t]);
+            i.renderDamageAndHeal(this.latestActionRes.result.bossAttack.playerDamage, !0), this.bossAttackAfter()
+        },
+        addCue: function(e) {
+            this.__a.push(e)
+        },
+        clearCue: function() {
+            void 0 !== this.__a && (this.__a = void 0), this.__a = []
+        },
+        getSizeCue: function() {
+            return this.__a.length
+        }
+    };
+    return v
+});

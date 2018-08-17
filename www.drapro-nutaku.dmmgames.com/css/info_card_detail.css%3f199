@@ -1,0 +1,317 @@
+@charset "UTF-8";
+/*
+	include/img_shows/info_card_detail.tplまたはそれ系列のインクルードファイル用のcss
+*/
+.content.showCurtain {
+  z-index: 20;
+}
+
+.cardPopupViewTop {
+  position: relative;
+}
+
+.spAtkCard {
+  width: 320px;
+  height: 392px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 320px 392px;
+          background-size: 320px 392px;
+}
+.spAtkCard .card_2,
+.spAtkCard .card_3 {
+  top: 334px;
+}
+.spAtkCard .card_1 {
+  top: 191px;
+  left: 120px;
+}
+.spAtkCard .card_2 {
+  left: 42px;
+}
+.spAtkCard .card_3 {
+  left: 204px;
+}
+
+.spAtkCard2 {
+  width: 320px;
+  height: 392px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: 320px 392px;
+          background-size: 320px 392px;
+}
+.spAtkCard2 .card_1,
+.spAtkCard2 .card_2 {
+  top: 212px;
+}
+.spAtkCard2 .card_1 {
+  left: 44px;
+}
+.spAtkCard2 .card_2 {
+  left: 198px;
+}
+.spAtkCard2 .card_3 {
+  top: 246px;
+  left: 205px;
+}
+.spAtkCard2 .card_3.cardTapListBtn {
+  width: 70px;
+  height: 70px;
+  background: none;
+}
+.spAtkCard2 .card_3.cardTapListBtn img {
+  width: 70px;
+  height: 70px;
+  display: block;
+}
+.spAtkCard2 .card_3 .cardTapListDetail {
+  position: absolute;
+  background-image: none;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+.spAtkCard2 .card_3 .cardTapListDetail .cardTapListDetailText {
+  border: 1px #a4a078 solid;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6e2e37), to(#9b5a65));
+  background: -webkit-linear-gradient(top, #6e2e37 0%, #9b5a65 100%);
+  background: linear-gradient(to bottom, #6e2e37 0%, #9b5a65 100%);
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3px 6px;
+  color: #fff;
+  line-height: 1;
+  font-size: 11px;
+}
+
+.fmCard_frame {
+  width: 320px;
+  height: 227px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+.fmCard_frame.open {
+  height: 400px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+.fmCard_frame .fmCardFrameBg {
+  width: 320px;
+  height: 227px;
+  -webkit-background-size: 320px 227px;
+          background-size: 320px 227px;
+}
+.fmCard_frame.open .fmCardFrameBg {
+  width: 320px;
+  height: 400px;
+  -webkit-background-size: 320px 400px;
+          background-size: 320px 400px;
+}
+.fmCard_frame .fmCard_pickup {
+  height: 168px;
+}
+.fmCard_frame .fmCard_pickup .cardTapListNewBadge {
+  top: -12px;
+  left: -4px;
+}
+.fmCard_frame .card_1,
+.fmCard_frame .card_2,
+.fmCard_frame .card_3 {
+  top: 134px;
+}
+.fmCard_frame .card_1 {
+  left: 16px;
+}
+.fmCard_frame .card_2 {
+  left: 120px;
+}
+.fmCard_frame .card_3 {
+  left: 224px;
+}
+.fmCard_frame .fmCardToggleFrame {
+  background: #fff;
+  padding: 0;
+}
+.fmCard_frame .fmCardToggleFrame h2 {
+  height: 24px;
+  line-height: 16px;
+  text-shadow: 0 0 1px #830015, 0 0 4px #830015, 0 0 8px #830015;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fc7b8f), to(#d8425b));
+  background: -webkit-linear-gradient(top, #fc7b8f 0%, #d8425b 100%);
+  background: linear-gradient(to bottom, #fc7b8f 0%, #d8425b 100%);
+  margin: 0 0 6px 0;
+}
+.fmCard_frame .fmCardToggleFrame h2.on {
+  margin: 0;
+  border-radius: 5px;
+}
+.fmCard_frame .fmCardToggleFrame h2.toggle:after {
+  top: -1px;
+}
+.fmCard_frame .fmCardToggleFrame .cardTapListIcon {
+  padding-bottom: 2px;
+}
+.fmCard_frame .fmCardToggleFrame .cardTapListIcon .cardPopupViewThumb {
+  margin: 0 0 5px 0;
+}
+
+.cardTapListBtn {
+  position: absolute;
+  width: 80px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.cardTapList .cardTapListThumb {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.lineCardTapList .cardTapListThumb {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.cardDataPopup {
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  display: none;
+  z-index: 11;
+}
+.cardDataPopup .btn-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  z-index: 1;
+}
+.cardDataPopup .popupContent {
+  display: none;
+}
+.cardDataPopup .popupContent .cardDetail {
+  position: relative;
+  display: none;
+}
+.cardDataPopup .popupContent .voice-btn {
+  top: 265px;
+  right: 10px;
+  bottom: 0;
+}
+
+.frame .cardDataPopup {
+  left: -10px;
+}
+
+.cardDataPopupCurtain {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  z-index: 10;
+}
+
+.bottomSet .cardDataPopup {
+  top: auto;
+}
+
+.cardPopupViewThumb {
+  margin: 10px 3px 0;
+  display: inline-block;
+}
+.cardPopupViewThumb:last-child {
+  margin-bottom: 10px;
+}
+.cardPopupViewThumb .cardTapListBtn {
+  position: relative;
+  margin-top: 5px;
+}
+
+.cardTapListIcon {
+  padding-bottom: 5px;
+}
+
+.cardTapListIcon .cardPopupViewThumb {
+  position: relative;
+  margin: 0 2px 5px 2px;
+  text-align: center;
+  line-height: 1;
+}
+
+.cardTapListIcon .cardPopupViewThumb img {
+  width: 70px;
+  height: 70px;
+  display: block;
+}
+
+.cardTapListIcon .cardPopupViewThumb.cardTapListBtn {
+  width: 70px;
+  height: 70px;
+  background: none;
+  cursor: pointer;
+}
+
+.cardTapListIcon .cardPopupViewThumb .cardTapListDetail {
+  position: absolute;
+  background-image: none;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.cardTapListIcon .cardPopupViewThumb .cardTapListDetail .cardTapListDetailText {
+  border: 1px #a4a078 solid;
+  border-radius: 3px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6e2e37), to(#9b5a65));
+  background: -webkit-linear-gradient(top, #6e2e37 0%, #9b5a65 100%);
+  background: linear-gradient(to bottom, #6e2e37 0%, #9b5a65 100%);
+  display: inline-block;
+  margin: 0 auto;
+  padding: 3px 6px;
+  color: #fff;
+  line-height: 1;
+  font-size: 11px;
+}
+
+.cardTapListIcon .chunk_item_3 .cardPopupViewThumb {
+  margin: 0 7px 5px 7px;
+}
+
+.cardTapListIcon .chunk_item_2 .cardPopupViewThumb {
+  margin: 0 17px 5px 17px;
+}
+
+.cardTapListIcon .chunk_item_1 .cardPopupViewThumb {
+  margin: 0 0 5px 0;
+}
+
+.cardTapListNewBadge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #a10004;
+  border: 1px solid #a4a078;
+  border-radius: 28px;
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 28px;
+}
+
+.setPageTop {
+  position: static;
+}

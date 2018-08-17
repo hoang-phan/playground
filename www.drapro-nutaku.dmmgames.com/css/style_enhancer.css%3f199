@@ -1,0 +1,249 @@
+/*
+  デザイン性増強用スタイルシート
+  * 新規実装ガチャ等、新モジュールの追加が必要なケースかつ汎用性を持たせたい（複数ページ使用が見込める）場合はこちらへ追記
+*/
+
+/**
+ * 黒ネオンタイトル文字
+ * ex.)
+<h2 class="h2Title">title</h2>
+ */
+.h2Title,
+#all > div > h2.h2Title{
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 1px #000, 0 0 4px #000, 0 0 8px #000;
+}
+
+/**
+ * 黄色フレームに黄色ヘッダが付いたframeの枠線濃いバージョン
+ * ex.)
+<div class="frame enhanced_border">
+<h1 class="frameTitleGold">title</h1>
+<div class="bgWhite">
+contents
+</div>
+</div>
+ */
+.frame.enhanced_border{
+    border: 1px solid #5f3752;
+}
+#all > div .frame.enhanced_border h1, .frame.enhanced_border h1{
+    margin: -11px 0 10px -11px;
+}
+
+/**
+ * 黄色フレームのpaddingを取り除いてコンテンツ領域をフルで取れるような改造を加えたバージョン
+ * ex.)
+<div class="frame enhanced_border wide">
+<h1 class="frameTitleGold">title</h1>
+<div class="bgWhite">
+contents
+</div>
+</div>
+ */
+.frame.wide{
+    padding: 0;
+}
+#all > div .frame.wide h1, .frame.wide h1,
+#all > div .frame.enhanced_border.wide h1, .frame.enhanced_border.wide h1{
+    margin: -11px 0 10px -1px;
+}
+
+/**
+ * ピックアップカードなどで対象カードが1枚しかないケースでキラキラ画像を背景に敷く
+ * ex.)
+<div class="cardMaxNum1 frame">
+<h1 class="frameTitleGold">title</h1>
+<div class="bgWhite">
+contents
+</div>
+</div>
+ */
+.frame.cardMaxNum1{
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    -webkit-background-size: 308px 99px;
+    background-size: 308px 99px;
+}
+
+/**
+ * 拭きだし
+ * ex.)
+<div class="arrow_box">
+<div class="arrow_box_item_inner">
+text text
+</div>
+</div>
+ */
+.arrow_box {
+    position: relative;
+    display: inline-block;
+    background: #ffffff;
+    padding: 3px 10px;
+    border: 1px solid #5f3752;
+    border-radius: 3px;
+    text-align: center;
+}
+.arrow_box:after, .arrow_box:before {
+    top: 100%;
+    left: 10%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.arrow_box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-top-color: #ffffff;
+    border-width: 6px;
+    margin-left: -6px;
+}
+.arrow_box:before {
+    border-color: rgba(95, 55, 82, 0);
+    border-top-color: #5f3752;
+    border-width: 7px;
+    margin-left: -7px;
+}
+
+/* 噴出し細身版 */
+.arrow_box_smart {
+    padding: 0 5px;
+}
+
+/**
+ * 端がグラデーションになっている薄緑色の帯
+ * ex.)
+<div class="rewardLine">報酬</div>
+ */
+.rewardLine {
+    color: #fff;
+    text-align: center;
+    text-shadow:
+            0 0 1px #4a4d26,
+            0 0 1px #4a4d26,
+            0 0 2px #4a4d26,
+            0 0 2px #4a4d26,
+            0 0 3px #4a4d26,
+            0 0 3px #4a4d26,
+            0 0 4px #4a4d26,
+            0 0 4px #4a4d26,
+            0 0 5px #4a4d26,
+            0 0 5px #4a4d26,
+            0 0 6px #4a4d26,
+            0 0 6px #4a4d26,
+            0 0 7px #4a4d26,
+            0 0 7px #4a4d26;
+    font-size: 12px;
+    line-height: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(186,189,153,0)),color-stop(5%, rgba(186,189,153,1)),color-stop(50%, rgba(186,189,153,1)),color-stop(95%, rgba(186,189,153,1)),to(rgba(186,189,153,0)));
+    background: -webkit-linear-gradient(left, rgba(186,189,153,0) 0%,rgba(186,189,153,1) 5%,rgba(186,189,153,1) 50%,rgba(186,189,153,1) 95%,rgba(186,189,153,0) 100%);
+    background: linear-gradient(left, rgba(186,189,153,0) 0%,rgba(186,189,153,1) 5%,rgba(186,189,153,1) 50%,rgba(186,189,153,1) 95%,rgba(186,189,153,0) 100%);
+}
+
+/**
+ * ミッションリワードサムネイル最小
+ * ex.)
+<div class="clear imgsize-ss">
+    <p class="clearRewardItemName">{$text}</p>
+    <div class="img"><img src="{"ui/campaign/campaign/{$campaign_id}/reward/{$image}.png?1508220685983"|image_url}"></div>
+</div>
+ */
+.rewardImgList .clear.imgsize-ss {
+    height: 30px;
+    padding: 5px 0 0;
+}
+.rewardImgList .clear.imgsize-ss .img {
+    text-align: center;
+}
+.rewardImgList .clear.imgsize-ss .img img {
+    width: 30px;
+}
+.rewardImgList .clear.imgsize-ss .clearRewardItemName {
+    line-height: 30px;
+}
+.rewardImgList .clear.imgsize-ss + hr.hr2 {
+    margin: 0px auto;
+}
+
+/**
+ * リワードリスト
+ * ex.)
+<article class="rewardListItem">
+    <h3>{$reward.pt}</h3>
+    <div class="img">
+        {$class_name = ' stampItem'}
+        {if ([カード判定]) }
+            {$class_name = ' stampCard'}
+        {/if}
+        <img src="{$reward.image}" width="80">
+        <div class="{if [リワード取得判定]}clearStamp{/if}{$class_name}"></div>
+    </div>
+    <div class="rewardListItemName">
+        {$reward.name}
+    </div>
+</article>
+ */
+.rewardListItem {
+    width: 90px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 12px;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-radius: 10px;
+    background: #fff;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.rewardListItem h3 {
+    color: #fff;
+    text-align: center;
+    line-height: 17px;
+    font-weight: normal;
+    background: -webkit-gradient(linear, left top, left bottom, from(#94163d), color-stop(0%, #aa3269), color-stop(10%, #9e266a), to(#b83f64));
+    background: -webkit-linear-gradient(top, #94163d 0%, #aa3269 0%, #9e266a 10%, #b83f64 100%);
+    background: linear-gradient(to bottom, #94163d 0%, #aa3269 0%, #9e266a 10%, #b83f64 100%);
+    border-radius: 8px 8px 0 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 4px 5px;
+    display: block;
+}
+.rewardListItem .img {
+    width: 80px;
+    position: relative;
+    margin: 5px;
+}
+.rewardListItem .img .clearStamp {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+/*カードサイズを縦80px横64pxに設定した場合の設定*/
+.rewardListItem .img.cardSize {
+    width: 64px;
+    margin: 5px auto;
+}
+.rewardListItem .img.cardSize .clearStamp.stampItem {
+    width: 100%;
+    background-position: 50% 0px;
+}
+.rewardListItem .rewardListItemName {
+    height: 40px;
+    color: #000;
+    font-size: 10px;
+    line-height: 12px;
+    text-align: center;
+    padding: 4px;
+}
